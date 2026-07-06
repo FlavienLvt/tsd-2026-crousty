@@ -4,7 +4,7 @@ This document defines the initial testing scope for our semester project.
 
 ## 1. Tested Application
 * **Name:** Demo Web Shop
-* **URL:** Lorem Ipsum
+* **URL:** https://flavienlvt.github.io/tsd-2026-crousty/demo-shop/
 * **Short Description:** A realistic demo e-commerce platform designed for software testing. It allows users to browse product categories, manage a shopping cart, and simulate the checkout process.
 
 ## 2. Business Purpose

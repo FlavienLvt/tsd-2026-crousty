@@ -8,7 +8,7 @@ Team name: Crousty
 
 Application name: Demo Web Shop
 
-Application URL: Lorem Ipsum
+Application URL: https://flavienlvt.github.io/tsd-2026-crousty/demo-shop/
 
 ## Project goal
 
