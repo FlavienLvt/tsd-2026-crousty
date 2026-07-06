@@ -1,0 +1,12 @@
+{
+  "name": "demo-web-shop",
+  "version": "1.0.0",
+  "description": "Demo Web Shop — REST API + frontend for Selenium, Postman, Robot Framework testing",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "json-server": "0.17.4"
+  }
+}

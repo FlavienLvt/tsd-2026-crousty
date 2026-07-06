@@ -5,19 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Demo Web Shop</title>
   <style>
-/* ===== RESET & BASE ===== */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'Segoe UI',Arial,sans-serif;color:#333;background:#f0f0f0;font-size:14px}
 a{color:inherit;text-decoration:none;cursor:pointer}
 button{cursor:pointer;font-family:inherit}
-input,select,textarea{font-family:inherit}
+input,select{font-family:inherit}
 ul{list-style:none}
-
-/* ===== LAYOUT ===== */
 .container{max-width:1200px;margin:0 auto;padding:0 16px}
 .page-wrapper{min-height:60vh;padding:20px 0}
-
-/* ===== HEADER ===== */
 .header-top{background:#3f4652}
 .header-inner{max-width:1200px;margin:0 auto;padding:12px 16px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
 .logo{color:white;font-size:1.4rem;font-weight:700;white-space:nowrap;cursor:pointer}
@@ -36,15 +31,11 @@ ul{list-style:none}
 .header-nav ul{max-width:1200px;margin:0 auto;padding:0 16px;display:flex;gap:2px;flex-wrap:wrap}
 .header-nav a{display:block;padding:9px 14px;color:#bbb;font-size:.85rem;border-bottom:2px solid transparent}
 .header-nav a:hover,.header-nav a.active{color:white;border-bottom-color:#f4a81d}
-
-/* ===== TOAST ===== */
 #toast{position:fixed;top:0;left:0;right:0;z-index:9999;display:none;padding:14px 20px;text-align:center;font-size:.9rem;font-weight:500}
 #toast.show{display:block;animation:fadein .25s ease}
 #toast.success{background:#4caf50;color:white}
 #toast.err{background:#e53935;color:white}
 @keyframes fadein{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}
-
-/* ===== BUTTONS ===== */
 .btn{padding:9px 18px;border:none;border-radius:3px;font-size:.9rem;font-weight:600;cursor:pointer;transition:background .15s;display:inline-block;text-align:center}
 .btn-primary{background:#4a90d9;color:white}.btn-primary:hover{background:#357abd}
 .btn-secondary{background:#777;color:white}.btn-secondary:hover{background:#555}
@@ -52,24 +43,16 @@ ul{list-style:none}
 .btn-danger{background:#e53935;color:white}.btn-danger:hover{background:#c62828}
 .btn-outline{background:transparent;border:1px solid #ccc;color:#555}.btn-outline:hover{background:#f5f5f5}
 .btn:disabled{background:#ccc!important;color:#888!important;cursor:not-allowed}
-.btn-block{width:100%}
-.btn-sm{padding:5px 12px;font-size:.82rem}
-.btn-lg{padding:12px 28px;font-size:1rem}
-
-/* ===== ALERTS ===== */
+.btn-block{width:100%}.btn-sm{padding:5px 12px;font-size:.82rem}.btn-lg{padding:12px 28px;font-size:1rem}
 .alert{padding:12px 16px;border-radius:3px;margin-bottom:14px;font-size:.9rem}
 .alert-error{background:#fce4e4;border:1px solid #f44336;color:#b71c1c}
 .alert-success{background:#e8f5e9;border:1px solid #4caf50;color:#1b5e20}
 .alert-warning{background:#fffde7;border:1px solid #ffc107;color:#827717}
 .alert-info{background:#e3f2fd;border:1px solid #2196f3;color:#0d47a1}
-
-/* ===== PAGE TITLE ===== */
 .page-title{font-size:1.4rem;font-weight:700;margin-bottom:20px;padding-bottom:10px;border-bottom:2px solid #eee}
 .breadcrumb{font-size:.82rem;color:#888;margin-bottom:14px}
 .breadcrumb a{color:#4a90d9}
 .breadcrumb .sep{margin:0 5px;color:#bbb}
-
-/* ===== HOME / PRODUCTS ===== */
 .products-page{display:grid;grid-template-columns:190px 1fr;gap:20px;align-items:start}
 .sidebar{background:white;border:1px solid #ddd;border-radius:4px;padding:16px}
 .sidebar h4{font-size:.82rem;font-weight:700;margin-bottom:10px;color:#555;text-transform:uppercase;letter-spacing:.5px}
@@ -87,8 +70,6 @@ ul{list-style:none}
 .product-price-tag{color:#e53935;font-size:1.1rem;font-weight:700;margin:6px 0 12px}
 .product-card .btn{margin-top:auto}
 .products-toolbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;font-size:.85rem;color:#666}
-
-/* ===== PRODUCT DETAIL ===== */
 .product-detail{background:white;border:1px solid #ddd;border-radius:4px;padding:24px}
 .product-detail-layout{display:grid;grid-template-columns:260px 1fr;gap:30px;align-items:start}
 .product-detail-img-box{border:1px solid #eee;border-radius:4px;padding:20px;text-align:center;font-size:7rem;background:#fafafa}
@@ -100,8 +81,6 @@ ul{list-style:none}
 .qty-field{width:75px;padding:8px;text-align:center;border:1px solid #ccc;border-radius:3px;font-size:1rem}
 .qty-field.field-invalid{border-color:#e53935}
 .qty-error{color:#e53935;font-size:.82rem;min-height:18px;margin-bottom:10px}
-
-/* ===== CART ===== */
 .cart-wrap{display:grid;grid-template-columns:1fr 300px;gap:20px;align-items:start}
 .cart-table{width:100%;border-collapse:collapse;background:white}
 .cart-table th{background:#f5f5f5;padding:10px 14px;text-align:left;font-size:.85rem;border-bottom:2px solid #ddd;color:#555}
@@ -113,8 +92,6 @@ ul{list-style:none}
 .summary-row{display:flex;justify-content:space-between;padding:5px 0;font-size:.9rem}
 .summary-total{display:flex;justify-content:space-between;padding:10px 0;font-weight:700;font-size:1.05rem;border-top:1px solid #ddd;margin-top:8px}
 .cart-empty{background:white;border:1px solid #ddd;border-radius:4px;padding:40px;text-align:center;color:#888}
-
-/* ===== FORMS ===== */
 .form-card{background:white;border:1px solid #ddd;border-radius:4px;padding:24px}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .form-group{margin-bottom:14px}
@@ -125,14 +102,10 @@ ul{list-style:none}
 .form-group input.field-invalid{border-color:#e53935}
 .field-msg{font-size:.8rem;margin-top:4px}
 .field-msg.err{color:#e53935}
-
-/* ===== AUTH ===== */
 .auth-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:860px;margin:0 auto}
 .auth-box{background:white;border:1px solid #ddd;border-radius:4px;padding:24px}
 .auth-box h2{font-size:1.1rem;font-weight:700;margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid #eee}
 .auth-box .info{font-size:.85rem;color:#666;margin-bottom:14px}
-
-/* ===== CHECKOUT ===== */
 .checkout-layout{display:grid;grid-template-columns:1fr 300px;gap:20px;align-items:start}
 .checkout-section{background:white;border:1px solid #ddd;border-radius:4px;padding:20px;margin-bottom:16px}
 .checkout-section-title{font-size:1rem;font-weight:700;color:#4a90d9;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid #f0f0f0}
@@ -145,25 +118,17 @@ ul{list-style:none}
 .guest-tab{padding:10px 20px;cursor:pointer;font-size:.9rem;border-bottom:2px solid transparent;margin-bottom:-2px;color:#777}
 .guest-tab.active{color:#4a90d9;border-bottom-color:#4a90d9;font-weight:700}
 .order-summary-item{display:flex;justify-content:space-between;padding:6px 0;font-size:.9rem;border-bottom:1px solid #f0f0f0}
-
-/* ===== ORDER CONFIRMED ===== */
 .order-confirmed-box{background:white;border:1px solid #ddd;border-radius:4px;padding:48px 32px;text-align:center;max-width:600px;margin:0 auto}
 .confirmed-icon{font-size:4rem;margin-bottom:16px}
 .confirmed-title{font-size:1.5rem;font-weight:700;color:#388e3c;margin-bottom:10px}
 .confirmed-order-num{font-size:1rem;color:#555;margin-bottom:14px}
 .confirmed-msg{color:#777;font-size:.9rem;margin-bottom:24px;line-height:1.6}
-
-/* ===== ACCOUNT ===== */
 .account-layout{display:grid;grid-template-columns:190px 1fr;gap:20px;align-items:start}
 .account-menu a{display:block;padding:9px 14px;border:1px solid #ddd;background:white;border-radius:3px;margin-bottom:4px;font-size:.88rem;color:#444}
 .account-menu a:hover,.account-menu a.active{background:#4a90d9;color:white;border-color:#4a90d9}
 .account-menu a.danger{color:#e53935}
 .account-menu a.danger:hover{background:#e53935;color:white;border-color:#e53935}
-
-/* ===== FOOTER ===== */
 .site-footer{background:#3f4652;color:#aaa;padding:20px;text-align:center;font-size:.82rem;margin-top:30px}
-
-/* ===== RESPONSIVE ===== */
 @media(max-width:768px){
   .header-inner{gap:10px}
   .search-wrap{order:3;width:100%;max-width:none}
@@ -176,644 +141,437 @@ ul{list-style:none}
   </style>
 </head>
 <body>
-
 <div id="toast"></div>
 <div id="site-header"></div>
 <main id="app" class="container page-wrapper"></main>
 <footer class="site-footer">
-  <p>© 2026 <strong>Demo Web Shop</strong> — Developed for testing purposes only</p>
+  <p>&copy; 2026 <strong>Demo Web Shop</strong> &mdash; For testing purposes only</p>
 </footer>
-
 <script>
 // ============================================================
-// PRODUCT CATALOG
+// STATE  (auth cached in localStorage; data lives in the API)
 // ============================================================
-const PRODUCTS = [
-  { id:1,  name:'14.1-inch Laptop',        category:'Laptops',     price:699.99,  icon:'💻', desc:'Compact 14.1-inch laptop with Intel Core i5, 8 GB RAM, 256 GB SSD. Ideal for everyday productivity.' },
-  { id:2,  name:'Gaming Laptop 15.6-inch', category:'Laptops',     price:1199.99, icon:'🎮', desc:'High-performance gaming laptop with RTX 3060, 16 GB RAM, 144 Hz display, and RGB keyboard.' },
-  { id:3,  name:'MacBook Pro 14-inch',     category:'Laptops',     price:1999.99, icon:'🍎', desc:'Apple MacBook Pro with M3 chip, 16 GB unified memory, 512 GB SSD, and Liquid Retina display.' },
-  { id:4,  name:'Laptop Stand Adjustable', category:'Laptops',     price:49.99,   icon:'🖥️', desc:'Ergonomic adjustable aluminum stand compatible with all 11–17 inch laptops.' },
-  { id:5,  name:'Samsung Galaxy S24',      category:'Phones',      price:799.99,  icon:'📱', desc:'Samsung flagship with 200 MP camera, 8 GB RAM, 256 GB storage, and 5G connectivity.' },
-  { id:6,  name:'iPhone 16',               category:'Phones',      price:999.99,  icon:'📱', desc:'Apple iPhone 16 with A18 chip, ProMotion display, Dynamic Island, and 5G.' },
-  { id:7,  name:'Wireless Headphones Pro', category:'Audio',       price:149.99,  icon:'🎧', desc:'Premium over-ear headphones with active noise cancellation and 30-hour battery life.' },
-  { id:8,  name:'Bluetooth Speaker',       category:'Audio',       price:89.99,   icon:'🔊', desc:'Portable waterproof Bluetooth speaker with 360° surround sound and 20-hour battery.' },
-  { id:9,  name:'USB-C Hub 7-in-1',        category:'Accessories', price:59.99,   icon:'🔌', desc:'Multiport hub: HDMI 4K, 3× USB-A, SD card reader, USB-C Power Delivery 100 W.' },
-  { id:10, name:'Wireless Mouse',          category:'Accessories', price:39.99,   icon:'🖱️', desc:'Ergonomic wireless mouse with silent clicks, 2.4 GHz receiver, and 12-month battery.' },
-  { id:11, name:'Mechanical Keyboard',     category:'Accessories', price:129.99,  icon:'⌨️', desc:'Compact TKL mechanical keyboard with Cherry MX switches and per-key RGB backlight.' },
-  { id:12, name:'Laptop Bag 15-inch',      category:'Accessories', price:59.99,   icon:'👜', desc:'Water-resistant laptop bag with padded compartments for laptops up to 15.6 inches.' },
-];
-
-const CATEGORIES = ['All', 'Laptops', 'Phones', 'Audio', 'Accessories'];
+function getCurrentUser(){ try{return JSON.parse(localStorage.getItem('dws_user')||'null')}catch{return null} }
+function saveCurrentUser(u){ u ? localStorage.setItem('dws_user',JSON.stringify(u)) : localStorage.removeItem('dws_user') }
+function getSessionId(){
+  let s=localStorage.getItem('dws_sid');
+  if(!s){s='sess_'+Math.random().toString(36).substr(2,9);localStorage.setItem('dws_sid',s)}
+  return s;
+}
+function getCachedCount(){ return parseInt(localStorage.getItem('dws_cc')||'0') }
+function setCachedCount(n){ localStorage.setItem('dws_cc',String(n)) }
 
 // ============================================================
-// STORAGE HELPERS
+// API HELPER
 // ============================================================
-function getUsers()       { try { return JSON.parse(localStorage.getItem('dws_users')   || '[]');   } catch { return []; } }
-function saveUsers(u)     { localStorage.setItem('dws_users',   JSON.stringify(u)); }
-function getCurrentUser() { try { return JSON.parse(localStorage.getItem('dws_current') || 'null'); } catch { return null; } }
-function saveCurrentUser(u) { u ? localStorage.setItem('dws_current', JSON.stringify(u)) : localStorage.removeItem('dws_current'); }
-function getCart()        { try { return JSON.parse(localStorage.getItem('dws_cart')    || '[]');   } catch { return []; } }
-function saveCart(c)      { localStorage.setItem('dws_cart',    JSON.stringify(c)); }
-
-function initDemoData() {
-  const users = getUsers();
-  if (!users.find(u => u.email === 'demo@webshop.com')) {
-    users.push({
-      email: 'demo@webshop.com', password: 'demo123',
-      firstName: 'Demo', lastName: 'User',
-      address: { firstName:'Demo', lastName:'User', address1:'123 Main Street', city:'New York', zip:'10001', country:'United States', phone:'555-0100' }
-    });
-    saveUsers(users);
+async function api(method, path, body){
+  const res = await fetch(path, {
+    method,
+    headers:{'Content-Type':'application/json'},
+    ...(body!==undefined && {body:JSON.stringify(body)})
+  });
+  const data = await res.json().catch(()=>({}));
+  if(!res.ok){
+    const e=new Error(data.message||`HTTP ${res.status}`);
+    e.status=res.status; throw e;
   }
+  return data;
 }
 
 // ============================================================
-// UTILITIES
+// PRODUCT CACHE
 // ============================================================
-let _toastTimer;
-function showToast(msg, type) {
-  const el = document.getElementById('toast');
-  el.textContent = msg;
-  el.className = 'show ' + (type || 'success');
-  clearTimeout(_toastTimer);
-  _toastTimer = setTimeout(() => { el.className = ''; }, 4000);
+let _products=null;
+async function loadProducts(){ if(!_products) _products=await api('GET','/products'); return _products; }
+async function findProduct(id){ return (await loadProducts()).find(p=>p.id===id); }
+
+// ============================================================
+// CART API
+// ============================================================
+async function fetchCart(){
+  const items=await api('GET',`/cart?sessionId=${getSessionId()}`);
+  setCachedCount(items.reduce((s,i)=>s+i.qty,0));
+  return items;
+}
+async function refreshBadge(){
+  const items=await fetchCart();
+  const el=document.getElementById('cart-count');
+  if(el) el.textContent=items.reduce((s,i)=>s+i.qty,0);
+}
+async function addToCart(product, qty){
+  const sid=getSessionId(), user=getCurrentUser();
+  const items=await fetchCart();
+  const ex=items.find(i=>i.productId===product.id);
+  if(ex){ await api('PUT',`/cart/${ex.id}`,{...ex,qty:ex.qty+qty}); }
+  else   { await api('POST','/cart',{sessionId:sid,userId:user?.id||null,productId:product.id,name:product.name,price:product.price,qty}); }
+  await refreshBadge();
+  showToast('The product has been added to your shopping cart.','success');
+}
+async function clearCart(){
+  const items=await fetchCart();
+  await Promise.all(items.map(i=>api('DELETE',`/cart/${i.id}`)));
+  setCachedCount(0);
+  const el=document.getElementById('cart-count'); if(el) el.textContent=0;
 }
 
-function cartTotal()  { return getCart().reduce((s, i) => s + i.price * i.qty, 0); }
-function cartCount()  { return getCart().reduce((s, i) => s + i.qty, 0); }
-function fmt(n)       { return '$' + Number(n).toFixed(2); }
+// ============================================================
+// UTILS
+// ============================================================
+let _tt;
+function showToast(msg,type){ const e=document.getElementById('toast'); e.textContent=msg; e.className='show '+(type||'success'); clearTimeout(_tt); _tt=setTimeout(()=>{e.className=''},4000); }
+function fmt(n){ return '$'+Number(n).toFixed(2); }
+function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+function serverDown(app){ app.innerHTML=`<div class="alert alert-error" style="max-width:600px;margin:40px auto;"><strong>Cannot connect to the API server.</strong><br><br>Start it first:<br><code style="display:inline-block;background:#f8f8f8;padding:6px 10px;border-radius:3px;margin-top:8px;">cd demo-shop &amp;&amp; npm install &amp;&amp; npm start</code><br><br>Then open: <a href="http://localhost:3001" style="color:#4a90d9;">http://localhost:3001</a></div>`; }
 
 // ============================================================
 // ROUTER
 // ============================================================
-function getRoute() {
-  const hash = location.hash.replace('#', '') || '/';
-  const [path, qs] = hash.split('?');
-  const params = {};
-  if (qs) qs.split('&').forEach(p => { const [k,v] = p.split('='); params[k] = decodeURIComponent(v || ''); });
-  return { path, params };
-}
+function getRoute(){ const h=location.hash.replace('#','')||'/'; const[path,qs]=h.split('?'); const p={}; if(qs) qs.split('&').forEach(x=>{const[k,v]=x.split('=');p[k]=decodeURIComponent(v||'')}); return{path,params:p}; }
+function navigate(path){ location.hash=path; }
 
-function navigate(path) { location.hash = path; }
-
-function route() {
-  const { path, params } = getRoute();
+async function route(){
   renderHeader();
-  const app = document.getElementById('app');
-  if (path === '/' || path === '/home') {
-    renderHome(app, params.cat || 'All');
-  } else if (path.startsWith('/product/')) {
-    renderProduct(app, parseInt(path.split('/')[2]));
-  } else if (path === '/search') {
-    renderSearch(app, params.q || '');
-  } else if (path === '/cart') {
-    renderCart(app);
-  } else if (path === '/login') {
-    renderLogin(app);
-  } else if (path === '/register') {
-    renderRegister(app);
-  } else if (path === '/checkout') {
-    renderCheckout(app);
-  } else if (path === '/order-confirmed') {
-    renderOrderConfirmed(app, params.order || '?');
-  } else if (path === '/account') {
-    renderAccount(app, params.tab || 'info');
-  } else {
-    app.innerHTML = '<p>Page not found. <a href="#/">Go home</a></p>';
+  const app=document.getElementById('app');
+  app.innerHTML='<p style="padding:30px 0;color:#aaa;text-align:center;">Loading...</p>';
+  const{path,params}=getRoute();
+  try{
+    if(path==='/'||path==='/home')          await renderHome(app,params.cat||'All');
+    else if(path.startsWith('/product/'))   await renderProduct(app,parseInt(path.split('/')[2]));
+    else if(path==='/search')               await renderSearch(app,params.q||'');
+    else if(path==='/cart')                 await renderCart(app);
+    else if(path==='/login')                renderLogin(app);
+    else if(path==='/register')             renderRegister(app);
+    else if(path==='/checkout')             await renderCheckout(app);
+    else if(path==='/order-confirmed')      renderOrderConfirmed(app,params.order||'?');
+    else if(path==='/account')              await renderAccount(app,params.tab||'info');
+    else app.innerHTML='<p>Page not found. <a href="#/">Go home</a></p>';
+  }catch(err){
+    if(err instanceof TypeError) serverDown(app);
+    else app.innerHTML=`<div class="alert alert-error">${esc(err.message)}</div>`;
   }
-  window.scrollTo(0, 0);
+  window.scrollTo(0,0);
 }
-
-window.addEventListener('hashchange', route);
-window.addEventListener('DOMContentLoaded', () => { initDemoData(); route(); });
+window.addEventListener('hashchange',route);
+window.addEventListener('DOMContentLoaded',route);
 
 // ============================================================
 // HEADER
 // ============================================================
-function renderHeader() {
-  const user  = getCurrentUser();
-  const count = cartCount();
-  const { path, params } = getRoute();
-  const searchVal = path === '/search' ? (params.q || '') : '';
-
-  document.getElementById('site-header').innerHTML = `
-    <div class="header-top">
-      <div class="header-inner">
-        <div class="logo" onclick="navigate('/')">Demo <span class="acc">Web Shop</span></div>
-        <form class="search-wrap" onsubmit="handleSearch(event)">
-          <input type="text" id="search-input" placeholder="Search products..." autocomplete="off" value="${escHtml(searchVal)}">
-          <button type="submit">Search</button>
-        </form>
-        <div class="header-actions">
-          ${user
-            ? `<span class="hdr-link">Welcome, <a href="#/account" style="font-weight:700;color:#f4a81d;">${escHtml(user.email)}</a>
-               &nbsp;|&nbsp;<a href="#/" onclick="logout()" class="hdr-link">Log out</a></span>`
-            : `<a href="#/login" class="hdr-link">Log in</a>
-               <a href="#/register" class="hdr-link">Register</a>`
-          }
-          <button class="cart-btn" onclick="navigate('/cart')">
-            🛒 Cart <span class="cart-qty" id="cart-count">${count}</span>
-          </button>
-        </div>
+function renderHeader(){
+  const user=getCurrentUser(), count=getCachedCount();
+  const{path,params}=getRoute(), sq=path==='/search'?(params.q||''):'';
+  document.getElementById('site-header').innerHTML=`
+    <div class="header-top"><div class="header-inner">
+      <div class="logo" onclick="navigate('/')">Demo <span class="acc">Web Shop</span></div>
+      <form class="search-wrap" onsubmit="doSearch(event)">
+        <input type="text" id="search-input" placeholder="Search products..." autocomplete="off" value="${esc(sq)}">
+        <button type="submit">Search</button>
+      </form>
+      <div class="header-actions">
+        ${user
+          ?`<span class="hdr-link">Welcome, <a href="#/account" style="font-weight:700;color:#f4a81d;">${esc(user.email)}</a>
+             &nbsp;|&nbsp;<a href="#/" class="hdr-link" onclick="doLogout()">Log out</a></span>`
+          :`<a href="#/login" class="hdr-link">Log in</a>
+            <a href="#/register" class="hdr-link">Register</a>`}
+        <button class="cart-btn" onclick="navigate('/cart')">
+          Cart <span class="cart-qty" id="cart-count">${count}</span>
+        </button>
       </div>
-    </div>
-    <nav class="header-nav">
-      <ul>
-        <li><a href="#/"                  class="${path==='/'?'active':''}">Home</a></li>
-        <li><a href="#/?cat=Laptops"      class="${params.cat==='Laptops'?'active':''}">Laptops</a></li>
-        <li><a href="#/?cat=Phones"       class="${params.cat==='Phones'?'active':''}">Phones</a></li>
-        <li><a href="#/?cat=Audio"        class="${params.cat==='Audio'?'active':''}">Audio</a></li>
-        <li><a href="#/?cat=Accessories"  class="${params.cat==='Accessories'?'active':''}">Accessories</a></li>
-        ${user ? `<li><a href="#/account" class="${path==='/account'?'active':''}">My Account</a></li>` : ''}
-      </ul>
-    </nav>`;
+    </div></div>
+    <nav class="header-nav"><ul>
+      <li><a href="#/"                 class="${path==='/'&&!params.cat?'active':''}">Home</a></li>
+      <li><a href="#/?cat=Laptops"     class="${params.cat==='Laptops'?'active':''}">Laptops</a></li>
+      <li><a href="#/?cat=Phones"      class="${params.cat==='Phones'?'active':''}">Phones</a></li>
+      <li><a href="#/?cat=Audio"       class="${params.cat==='Audio'?'active':''}">Audio</a></li>
+      <li><a href="#/?cat=Accessories" class="${params.cat==='Accessories'?'active':''}">Accessories</a></li>
+      ${user?`<li><a href="#/account" class="${path==='/account'?'active':''}">My Account</a></li>`:''}
+    </ul></nav>`;
 }
-
-function handleSearch(e) {
-  e.preventDefault();
-  const q = document.getElementById('search-input').value.trim();
-  navigate('/search?q=' + encodeURIComponent(q));
-}
-
-function logout() {
-  saveCurrentUser(null);
-  showToast('You have successfully logged out.', 'success');
-  navigate('/');
-}
-
-function escHtml(s) { return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+function doSearch(e){ e.preventDefault(); navigate('/search?q='+encodeURIComponent(document.getElementById('search-input').value.trim())); }
+function doLogout(){ saveCurrentUser(null); showToast('You have successfully logged out.','success'); }
 
 // ============================================================
-// HOME PAGE
+// HOME
 // ============================================================
-function renderHome(app, activeCat) {
-  const products = activeCat === 'All' ? PRODUCTS : PRODUCTS.filter(p => p.category === activeCat);
-  const counts   = {};
-  CATEGORIES.forEach(c => { counts[c] = c === 'All' ? PRODUCTS.length : PRODUCTS.filter(p => p.category === c).length; });
-
-  app.innerHTML = `
+const CATS=['All','Laptops','Phones','Audio','Accessories'];
+async function renderHome(app,activeCat){
+  const products=await loadProducts();
+  const filtered=activeCat==='All'?products:products.filter(p=>p.category===activeCat);
+  const counts={}; CATS.forEach(c=>{counts[c]=c==='All'?products.length:products.filter(p=>p.category===c).length});
+  app.innerHTML=`
     <div class="products-page">
       <aside class="sidebar">
         <h4>Categories</h4>
         <div class="cat-list">
-          ${CATEGORIES.map(c => `
-            <a href="#/?cat=${c}" class="${activeCat===c?'active':''}">
-              ${c} <span class="cat-count">${counts[c]}</span>
-            </a>`).join('')}
+          ${CATS.map(c=>`<a href="#/?cat=${c}" class="${activeCat===c?'active':''}">${c} <span class="cat-count">${counts[c]}</span></a>`).join('')}
         </div>
       </aside>
       <div>
-        <div class="breadcrumb">
-          <a href="#/">Home</a>
-          ${activeCat !== 'All' ? `<span class="sep">›</span>${activeCat}` : ''}
-        </div>
-        <div class="products-toolbar">
-          <span>${products.length} product${products.length!==1?'s':''} found</span>
-        </div>
-        ${products.length === 0
-          ? '<div class="alert alert-info">No products found in this category.</div>'
-          : `<div class="products-grid">${products.map(productCard).join('')}</div>`
-        }
+        <div class="breadcrumb"><a href="#/">Home</a>${activeCat!=='All'?`<span class="sep">›</span>${activeCat}`:''}</div>
+        <div class="products-toolbar"><span>${filtered.length} product${filtered.length!==1?'s':''} found</span></div>
+        ${filtered.length===0
+          ?'<div class="alert alert-info">No products in this category.</div>'
+          :`<div class="products-grid">${filtered.map(productCard).join('')}</div>`}
       </div>
     </div>`;
 }
-
-function productCard(p) {
-  return `
-    <div class="product-card">
-      <div class="product-thumb">${p.icon}</div>
-      <a class="product-name-link" href="#/product/${p.id}">${escHtml(p.name)}</a>
-      <div class="product-cat-tag">${p.category}</div>
-      <div class="product-price-tag">${fmt(p.price)}</div>
-      <button class="btn btn-primary btn-sm" onclick="quickAddToCart(${p.id})">Add to cart</button>
-    </div>`;
-}
-
-function quickAddToCart(id) {
-  const p = PRODUCTS.find(x => x.id === id);
-  if (p) addToCart(p, 1);
-}
+function productCard(p){ return `
+  <div class="product-card">
+    <div class="product-thumb">${p.icon}</div>
+    <a class="product-name-link" href="#/product/${p.id}">${esc(p.name)}</a>
+    <div class="product-cat-tag">${p.category}</div>
+    <div class="product-price-tag">${fmt(p.price)}</div>
+    <button class="btn btn-primary btn-sm" onclick="quickAdd(${p.id},event)">Add to cart</button>
+  </div>`; }
+async function quickAdd(id,e){ const btn=e.target; btn.disabled=true; try{ await addToCart(await findProduct(id),1); }finally{ btn.disabled=false; } }
 
 // ============================================================
 // PRODUCT DETAIL
 // ============================================================
-function renderProduct(app, id) {
-  const p = PRODUCTS.find(x => x.id === id);
-  if (!p) { app.innerHTML = '<div class="alert alert-error">Product not found.</div>'; return; }
-
-  app.innerHTML = `
-    <div class="breadcrumb">
-      <a href="#/">Home</a><span class="sep">›</span>
-      <a href="#/?cat=${p.category}">${p.category}</a><span class="sep">›</span>
-      ${escHtml(p.name)}
-    </div>
+async function renderProduct(app,id){
+  const p=await findProduct(id);
+  if(!p){app.innerHTML='<div class="alert alert-error">Product not found.</div>';return;}
+  app.innerHTML=`
+    <div class="breadcrumb"><a href="#/">Home</a><span class="sep">›</span><a href="#/?cat=${p.category}">${p.category}</a><span class="sep">›</span>${esc(p.name)}</div>
     <div class="product-detail">
       <div class="product-detail-layout">
         <div class="product-detail-img-box">${p.icon}</div>
         <div>
-          <h1 class="product-detail-title">${escHtml(p.name)}</h1>
+          <h1 class="product-detail-title">${esc(p.name)}</h1>
           <div class="product-detail-price">${fmt(p.price)}</div>
-          <p class="product-detail-desc">${escHtml(p.desc)}</p>
-          <div class="qty-row">
-            <label for="qty-field">Qty:</label>
-            <input type="number" id="qty-field" class="qty-field" value="1">
-          </div>
+          <p class="product-detail-desc">${esc(p.desc)}</p>
+          <div class="qty-row"><label for="qty-field">Qty:</label><input type="number" id="qty-field" class="qty-field" value="1"></div>
           <div id="qty-msg" class="qty-error"></div>
           <div style="display:flex;gap:10px;">
-            <button class="btn btn-primary btn-lg" onclick="handleAddToCartFromPage(${p.id})">Add to cart</button>
-            <button class="btn btn-outline btn-lg" onclick="history.back()">← Back</button>
+            <button class="btn btn-primary btn-lg" id="add-btn" onclick="handleAddToCart(${p.id})">Add to cart</button>
+            <button class="btn btn-outline btn-lg" onclick="history.back()">Back</button>
           </div>
         </div>
       </div>
     </div>`;
 }
-
-function handleAddToCartFromPage(id) {
-  const qtyInput = document.getElementById('qty-field');
-  const qtyMsg   = document.getElementById('qty-msg');
-  const qty = parseInt(qtyInput.value);
-
-  // TC-008: reject 0 or negative quantity
-  if (isNaN(qty) || qty <= 0) {
-    qtyMsg.textContent = 'Quantity must be greater than 0.';
-    qtyInput.classList.add('field-invalid');
-    return;
+async function handleAddToCart(id){
+  const qi=document.getElementById('qty-field'), qm=document.getElementById('qty-msg'), qty=parseInt(qi.value);
+  if(isNaN(qty)||qty<=0){ // TC-008
+    qm.textContent='Quantity must be greater than 0.'; qi.classList.add('field-invalid'); return;
   }
-  qtyMsg.textContent = '';
-  qtyInput.classList.remove('field-invalid');
-
-  const p = PRODUCTS.find(x => x.id === id);
-  if (p) addToCart(p, qty);
+  qm.textContent=''; qi.classList.remove('field-invalid');
+  const btn=document.getElementById('add-btn'); btn.disabled=true;
+  try{ await addToCart(await findProduct(id),qty); }
+  catch(err){ qm.textContent=err.message; }
+  finally{ btn.disabled=false; }
 }
 
 // ============================================================
-// SEARCH — TC-002 / TC-005
+// SEARCH  (TC-002 / TC-005)
 // ============================================================
-function renderSearch(app, q) {
-  const results = q
-    ? PRODUCTS.filter(p => p.name.toLowerCase().includes(q.toLowerCase()) || p.category.toLowerCase().includes(q.toLowerCase()))
-    : [];
-
-  app.innerHTML = `
+async function renderSearch(app,q){
+  const results=q ? await api('GET',`/products?name_like=${encodeURIComponent(q)}`) : [];
+  app.innerHTML=`
     <div class="breadcrumb"><a href="#/">Home</a><span class="sep">›</span>Search</div>
-    <h1 class="page-title">Search results for: &ldquo;${escHtml(q)}&rdquo;</h1>
-    ${results.length === 0
-      ? '<div class="alert alert-warning">No products were found that matched your criteria.</div>'
-      : `<p style="margin-bottom:14px;color:#666;">${results.length} product${results.length!==1?'s':''} found</p>
-         <div class="products-grid">${results.map(productCard).join('')}</div>`
-    }`;
+    <h1 class="page-title">Search results for: &ldquo;${esc(q)}&rdquo;</h1>
+    ${results.length===0
+      ?'<div class="alert alert-warning">No products were found that matched your criteria.</div>'
+      :`<p style="margin-bottom:14px;color:#666;">${results.length} product${results.length!==1?'s':''} found</p>
+        <div class="products-grid">${results.map(productCard).join('')}</div>`}`;
 }
 
 // ============================================================
-// CART — TC-003 / TC-006
+// CART  (TC-003 / TC-006)
 // ============================================================
-function renderCart(app) {
-  const cart = getCart();
-
-  // TC-006: empty cart — no checkout button shown
-  if (cart.length === 0) {
-    app.innerHTML = `
+async function renderCart(app){
+  const cart=await fetchCart();
+  if(cart.length===0){ // TC-006: no checkout button when empty
+    app.innerHTML=`
       <h1 class="page-title">Shopping Cart</h1>
       <div class="cart-empty">
         <div style="font-size:3rem;margin-bottom:12px;">🛒</div>
         <div class="alert alert-warning" style="display:inline-block;">Your shopping cart is empty!</div>
-        <br><br>
-        <a href="#/" class="btn btn-primary">Continue Shopping</a>
-      </div>`;
-    return;
+        <br><br><a href="#/" class="btn btn-primary">Continue Shopping</a>
+      </div>`; return;
   }
-
-  const subtotal = cartTotal();
-  const shipping  = subtotal >= 50 ? 0 : 5.99;
-  const total     = subtotal + shipping;
-
-  app.innerHTML = `
+  const sub=cart.reduce((s,i)=>s+i.price*i.qty,0), ship=sub>=50?0:5.99, tot=sub+ship;
+  app.innerHTML=`
     <h1 class="page-title">Shopping Cart</h1>
     <div class="cart-wrap">
       <div>
         <table class="cart-table">
-          <thead><tr>
-            <th>Product</th><th>Unit Price</th><th>Quantity</th><th>Total</th><th></th>
-          </tr></thead>
+          <thead><tr><th>Product</th><th>Unit Price</th><th>Qty</th><th>Total</th><th></th></tr></thead>
           <tbody>
-            ${cart.map((item, i) => `
+            ${cart.map(item=>`
               <tr>
-                <td><a href="#/product/${item.id}" class="cart-product-name">${escHtml(item.name)}</a></td>
+                <td><a href="#/product/${item.productId}" class="cart-product-name">${esc(item.name)}</a></td>
                 <td>${fmt(item.price)}</td>
-                <td><input type="number" class="cart-qty-field" value="${item.qty}" min="1" max="100"
-                  onchange="updateCartQty(${i}, this.value)"></td>
-                <td>${fmt(item.price * item.qty)}</td>
-                <td><button class="btn btn-danger btn-sm" onclick="removeFromCart(${i})">Remove</button></td>
+                <td><input type="number" class="cart-qty-field" value="${item.qty}" min="1" onchange="updateQty(${item.id},this.value,'${encodeURIComponent(JSON.stringify(item))}')"></td>
+                <td>${fmt(item.price*item.qty)}</td>
+                <td><button class="btn btn-danger btn-sm" onclick="removeItem(${item.id})">Remove</button></td>
               </tr>`).join('')}
           </tbody>
         </table>
-        <div style="margin-top:14px;display:flex;justify-content:space-between;gap:10px;">
+        <div style="margin-top:14px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;">
           <a href="#/" class="btn btn-outline">Continue Shopping</a>
-          <button class="btn btn-secondary" onclick="clearCart()">Clear Cart</button>
+          <button class="btn btn-secondary" onclick="doClearCart()">Clear Cart</button>
         </div>
       </div>
       <div class="cart-summary">
         <h3>Order Summary</h3>
-        <div class="summary-row"><span>Subtotal</span><span>${fmt(subtotal)}</span></div>
-        <div class="summary-row"><span>Shipping</span><span>${shipping===0?'FREE':fmt(shipping)}</span></div>
-        <div class="summary-total"><span>Total</span><span>${fmt(total)}</span></div>
-        <button class="btn btn-success btn-block btn-lg" style="margin-top:16px;" onclick="navigate('/checkout')">
-          Checkout →
-        </button>
+        <div class="summary-row"><span>Subtotal</span><span>${fmt(sub)}</span></div>
+        <div class="summary-row"><span>Shipping</span><span>${ship===0?'FREE':fmt(ship)}</span></div>
+        <div class="summary-total"><span>Total</span><span>${fmt(tot)}</span></div>
+        <button class="btn btn-success btn-block btn-lg" style="margin-top:16px;" onclick="navigate('/checkout')">Checkout →</button>
         <p style="font-size:.78rem;color:#999;text-align:center;margin-top:8px;">Free shipping on orders over $50</p>
       </div>
     </div>`;
 }
-
-function updateCartQty(i, val) {
-  const qty = parseInt(val);
-  if (!qty || qty < 1) return;
-  const cart = getCart(); cart[i].qty = qty; saveCart(cart);
-  renderHeader();
-  renderCart(document.getElementById('app'));
+async function updateQty(cartId,val,itemJson){
+  const qty=parseInt(val); if(!qty||qty<1) return;
+  const item=JSON.parse(decodeURIComponent(itemJson));
+  await api('PUT',`/cart/${cartId}`,{...item,qty});
+  await refreshBadge(); await renderCart(document.getElementById('app'));
 }
-
-function removeFromCart(i) {
-  const cart = getCart(); cart.splice(i, 1); saveCart(cart);
-  renderHeader();
-  renderCart(document.getElementById('app'));
-  showToast('Item removed from cart.', 'success');
-}
-
-function clearCart() {
-  saveCart([]);
-  renderHeader();
-  renderCart(document.getElementById('app'));
-}
-
-// TC-003: adds item and shows success toast
-function addToCart(product, qty) {
-  const cart = getCart();
-  const existing = cart.find(i => i.id === product.id);
-  if (existing) { existing.qty += qty; } else { cart.push({ id:product.id, name:product.name, price:product.price, qty }); }
-  saveCart(cart);
-  renderHeader();
-  showToast('The product has been added to your shopping cart.', 'success');
-}
+async function removeItem(id){ await api('DELETE',`/cart/${id}`); await refreshBadge(); await renderCart(document.getElementById('app')); showToast('Item removed.','success'); }
+async function doClearCart(){ await clearCart(); await renderCart(document.getElementById('app')); }
 
 // ============================================================
-// LOGIN — TC-001 / TC-004
+// LOGIN  (TC-001 / TC-004)
 // ============================================================
-function renderLogin(app) {
-  if (getCurrentUser()) { navigate('/account'); return; }
-  app.innerHTML = `
+function renderLogin(app){
+  if(getCurrentUser()){navigate('/account');return;}
+  app.innerHTML=`
     <div class="breadcrumb"><a href="#/">Home</a><span class="sep">›</span>Log in</div>
     <div class="auth-grid">
       <div class="auth-box">
         <h2>Returning Customer</h2>
-        <p class="info">If you have an account, sign in with your email address.</p>
+        <p class="info">Sign in with your email address.</p>
         <div id="login-alert"></div>
         <form onsubmit="handleLogin(event)">
-          <div class="form-group">
-            <label>Email <span class="req">*</span></label>
-            <input type="email" id="login-email" placeholder="Email address" required autocomplete="username">
-          </div>
-          <div class="form-group">
-            <label>Password <span class="req">*</span></label>
-            <input type="password" id="login-password" placeholder="Password" required autocomplete="current-password">
-          </div>
+          <div class="form-group"><label>Email <span class="req">*</span></label><input type="email" id="login-email" placeholder="Email" required autocomplete="username"></div>
+          <div class="form-group"><label>Password <span class="req">*</span></label><input type="password" id="login-pwd" placeholder="Password" required autocomplete="current-password"></div>
           <button type="submit" class="btn btn-primary btn-block">Log in</button>
         </form>
-        <p style="margin-top:14px;font-size:.82rem;color:#888;">
-          Demo credentials:&nbsp;<strong>demo@webshop.com</strong>&nbsp;/&nbsp;<strong>demo123</strong>
-        </p>
+        <p style="margin-top:14px;font-size:.82rem;color:#888;">Demo: <strong>demo@webshop.com</strong> / <strong>demo123</strong></p>
       </div>
       <div class="auth-box">
         <h2>New Customer</h2>
-        <p class="info">Create an account to speed up future checkouts, track your orders, and manage your address book.</p>
-        <ul style="font-size:.88rem;color:#555;margin-bottom:16px;padding-left:18px;list-style:disc;">
-          <li>Faster checkout</li><li>Order history</li><li>Address book</li>
-        </ul>
+        <p class="info">Register to speed up checkout, track orders, and manage your address book.</p>
         <a href="#/register" class="btn btn-secondary btn-block">Register</a>
       </div>
     </div>`;
 }
-
-function handleLogin(e) {
+async function handleLogin(e){
   e.preventDefault();
-  const email    = document.getElementById('login-email').value.trim();
-  const password = document.getElementById('login-password').value;
-  const user     = getUsers().find(u => u.email === email && u.password === password);
-
-  if (user) {
-    saveCurrentUser(user);
-    renderHeader();
-    navigate('/');
-    showToast('Welcome back, ' + user.email + '!', 'success');
-  } else {
-    // TC-004: exact error message
-    document.getElementById('login-alert').innerHTML = `
-      <div class="alert alert-error">
-        Login was unsuccessful. Please correct the errors and try again.
-      </div>`;
-  }
+  const email=document.getElementById('login-email').value.trim(), pwd=document.getElementById('login-pwd').value;
+  const btn=e.target.querySelector('button[type=submit]'); btn.disabled=true;
+  try{
+    const data=await api('POST','/auth/login',{email,password:pwd});
+    saveCurrentUser(data.user); renderHeader(); navigate('/');
+    showToast('Welcome back, '+data.user.email+'!','success');
+  }catch(err){
+    // TC-004: show exact server message
+    document.getElementById('login-alert').innerHTML=`<div class="alert alert-error">${esc(err.message)}</div>`;
+  }finally{ btn.disabled=false; }
 }
 
 // ============================================================
-// REGISTER — TC-007
+// REGISTER  (TC-007)
 // ============================================================
-function renderRegister(app) {
-  if (getCurrentUser()) { navigate('/account'); return; }
-  app.innerHTML = `
+function renderRegister(app){
+  if(getCurrentUser()){navigate('/account');return;}
+  app.innerHTML=`
     <div class="breadcrumb"><a href="#/">Home</a><span class="sep">›</span>Register</div>
     <h1 class="page-title">Create Account</h1>
     <div class="form-card" style="max-width:540px;">
       <div id="reg-alert"></div>
       <form onsubmit="handleRegister(event)">
         <div class="form-row">
-          <div class="form-group">
-            <label>First name <span class="req">*</span></label>
-            <input type="text" id="reg-firstname" placeholder="First name">
-            <div class="field-msg err" id="err-firstname"></div>
-          </div>
-          <div class="form-group">
-            <label>Last name <span class="req">*</span></label>
-            <input type="text" id="reg-lastname" placeholder="Last name">
-            <div class="field-msg err" id="err-lastname"></div>
-          </div>
+          <div class="form-group"><label>First name <span class="req">*</span></label><input type="text" id="reg-fn" placeholder="First name"><div class="field-msg err" id="err-fn"></div></div>
+          <div class="form-group"><label>Last name <span class="req">*</span></label><input type="text" id="reg-ln" placeholder="Last name"><div class="field-msg err" id="err-ln"></div></div>
         </div>
-        <div class="form-group">
-          <label>Email <span class="req">*</span></label>
-          <input type="email" id="reg-email" placeholder="Email address">
-          <div class="field-msg err" id="err-email"></div>
-        </div>
-        <div class="form-group">
-          <label>Password <span class="req">*</span></label>
-          <input type="password" id="reg-password" placeholder="At least 6 characters" autocomplete="new-password">
-          <div class="field-msg err" id="err-password"></div>
-        </div>
-        <div class="form-group">
-          <label>Confirm password <span class="req">*</span></label>
-          <input type="password" id="reg-confirm" placeholder="Confirm password" autocomplete="new-password">
-          <div class="field-msg err" id="err-confirm"></div>
-        </div>
+        <div class="form-group"><label>Email <span class="req">*</span></label><input type="email" id="reg-email" placeholder="Email"><div class="field-msg err" id="err-email"></div></div>
+        <div class="form-group"><label>Password <span class="req">*</span></label><input type="password" id="reg-pwd" placeholder="At least 6 characters" autocomplete="new-password"><div class="field-msg err" id="err-pwd"></div></div>
+        <div class="form-group"><label>Confirm password <span class="req">*</span></label><input type="password" id="reg-conf" placeholder="Repeat password" autocomplete="new-password"><div class="field-msg err" id="err-conf"></div></div>
         <button type="submit" class="btn btn-primary btn-block">Register</button>
-        <p style="margin-top:12px;font-size:.82rem;color:#888;">
-          Already have an account? <a href="#/login" style="color:#4a90d9;">Log in</a>
-        </p>
+        <p style="margin-top:12px;font-size:.82rem;color:#888;">Already registered? <a href="#/login" style="color:#4a90d9;">Log in</a></p>
       </form>
     </div>`;
 }
-
-function handleRegister(e) {
+async function handleRegister(e){
   e.preventDefault();
-  let valid = true;
-  ['firstname','lastname','email','password','confirm'].forEach(f => {
-    const el = document.getElementById('err-' + f);
-    if (el) el.textContent = '';
-    const inp = document.getElementById('reg-' + f);
-    if (inp) inp.classList.remove('field-invalid');
-  });
-
-  const firstName = document.getElementById('reg-firstname').value.trim();
-  const lastName  = document.getElementById('reg-lastname').value.trim();
-  const email     = document.getElementById('reg-email').value.trim();
-  const password  = document.getElementById('reg-password').value;
-  const confirm   = document.getElementById('reg-confirm').value;
-
-  if (!firstName) { setFieldErr('firstname', 'First name is required.'); valid = false; }
-  if (!lastName)  { setFieldErr('lastname',  'Last name is required.');  valid = false; }
-
-  if (!email) { setFieldErr('email', 'Email is required.'); valid = false; }
-  else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { setFieldErr('email', 'Please enter a valid email address.'); valid = false; }
-  else if (getUsers().find(u => u.email === email)) { setFieldErr('email', 'An account with this email already exists.'); valid = false; }
-
-  if (!password) { setFieldErr('password', 'Password is required.'); valid = false; }
-  // TC-007: minimum 6 characters
-  else if (password.length < 6) { setFieldErr('password', 'Password must have at least 6 characters.'); valid = false; }
-
-  if (password && confirm !== password) { setFieldErr('confirm', 'Passwords do not match.'); valid = false; }
-
-  if (!valid) return;
-
-  const users   = getUsers();
-  const newUser = { email, password, firstName, lastName, address: null };
-  users.push(newUser);
-  saveUsers(users);
-  saveCurrentUser(newUser);
-  renderHeader();
-  navigate('/');
-  showToast('Your account has been successfully registered!', 'success');
+  ['fn','ln','email','pwd','conf'].forEach(f=>{const el=document.getElementById('err-'+f);if(el)el.textContent='';const i=document.getElementById('reg-'+f);if(i)i.classList.remove('field-invalid')});
+  const fn=document.getElementById('reg-fn').value.trim(), ln=document.getElementById('reg-ln').value.trim();
+  const email=document.getElementById('reg-email').value.trim(), pwd=document.getElementById('reg-pwd').value, conf=document.getElementById('reg-conf').value;
+  let ok=true;
+  if(!fn){setFErr('fn','First name is required.');ok=false;}
+  if(!ln){setFErr('ln','Last name is required.');ok=false;}
+  if(!email){setFErr('email','Email is required.');ok=false;}
+  if(!pwd){setFErr('pwd','Password is required.');ok=false;}
+  else if(pwd.length<6){setFErr('pwd','Password must have at least 6 characters.');ok=false;} // TC-007
+  if(pwd&&conf!==pwd){setFErr('conf','Passwords do not match.');ok=false;}
+  if(!ok) return;
+  const btn=e.target.querySelector('button[type=submit]'); btn.disabled=true;
+  try{
+    const data=await api('POST','/auth/register',{firstName:fn,lastName:ln,email,password:pwd});
+    saveCurrentUser(data.user); renderHeader(); navigate('/');
+    showToast('Account created successfully!','success');
+  }catch(err){
+    if(err.status===409) setFErr('email',err.message);
+    else document.getElementById('reg-alert').innerHTML=`<div class="alert alert-error">${esc(err.message)}</div>`;
+  }finally{ btn.disabled=false; }
 }
-
-function setFieldErr(field, msg) {
-  const err = document.getElementById('err-' + field);
-  const inp = document.getElementById('reg-' + field);
-  if (err) err.textContent = msg;
-  if (inp) inp.classList.add('field-invalid');
-}
+function setFErr(f,msg){ const e=document.getElementById('err-'+f),i=document.getElementById('reg-'+f); if(e)e.textContent=msg; if(i)i.classList.add('field-invalid'); }
 
 // ============================================================
-// CHECKOUT — TC-009 / TC-010
+// CHECKOUT  (TC-009 guest / TC-010 registered)
 // ============================================================
-function addrForm(prefix, pre) {
-  const v = (k, fb) => escHtml(pre?.[k] || fb || '');
-  const sel = (val, opt) => opt === val ? 'selected' : '';
+function addrForm(pfx,pre){
+  const v=k=>esc(pre&&pre[k]||'');
+  const sel=(a,b)=>a===b?'selected':'';
+  const co=pre&&pre.country||'';
   return `
     <div class="form-row">
-      <div class="form-group">
-        <label>First name <span class="req">*</span></label>
-        <input type="text" id="${prefix}-fn" value="${v('firstName')}">
-      </div>
-      <div class="form-group">
-        <label>Last name <span class="req">*</span></label>
-        <input type="text" id="${prefix}-ln" value="${v('lastName')}">
-      </div>
+      <div class="form-group"><label>First name <span class="req">*</span></label><input type="text" id="${pfx}-fn" value="${v('firstName')}"></div>
+      <div class="form-group"><label>Last name <span class="req">*</span></label><input type="text" id="${pfx}-ln" value="${v('lastName')}"></div>
     </div>
-    <div class="form-group">
-      <label>Email <span class="req">*</span></label>
-      <input type="email" id="${prefix}-email" value="${v('email', getCurrentUser()?.email||'')}">
-    </div>
-    <div class="form-group">
-      <label>Address <span class="req">*</span></label>
-      <input type="text" id="${prefix}-addr" value="${v('address1')}" placeholder="Street address">
-    </div>
+    <div class="form-group"><label>Email <span class="req">*</span></label><input type="email" id="${pfx}-em" value="${esc(pre&&pre.email||getCurrentUser()&&getCurrentUser().email||'')}"></div>
+    <div class="form-group"><label>Address <span class="req">*</span></label><input type="text" id="${pfx}-addr" value="${v('address1')}" placeholder="Street address"></div>
     <div class="form-row">
-      <div class="form-group">
-        <label>City <span class="req">*</span></label>
-        <input type="text" id="${prefix}-city" value="${v('city')}">
-      </div>
-      <div class="form-group">
-        <label>ZIP / Postal code <span class="req">*</span></label>
-        <input type="text" id="${prefix}-zip" value="${v('zip')}">
-      </div>
+      <div class="form-group"><label>City <span class="req">*</span></label><input type="text" id="${pfx}-city" value="${v('city')}"></div>
+      <div class="form-group"><label>ZIP <span class="req">*</span></label><input type="text" id="${pfx}-zip" value="${v('zip')}"></div>
     </div>
-    <div class="form-group">
-      <label>Country <span class="req">*</span></label>
-      <select id="${prefix}-country">
-        <option value="United States" ${sel(v('country'),'United States')}>United States</option>
-        <option value="Canada"         ${sel(v('country'),'Canada')}>Canada</option>
-        <option value="France"         ${sel(v('country'),'France')}>France</option>
-        <option value="Germany"        ${sel(v('country'),'Germany')}>Germany</option>
-        <option value="United Kingdom" ${sel(v('country'),'United Kingdom')}>United Kingdom</option>
-        <option value="Other">Other</option>
+    <div class="form-group"><label>Country</label>
+      <select id="${pfx}-country">
+        <option value="United States" ${sel(co,'United States')}>United States</option>
+        <option value="Canada" ${sel(co,'Canada')}>Canada</option>
+        <option value="France" ${sel(co,'France')}>France</option>
+        <option value="Germany" ${sel(co,'Germany')}>Germany</option>
+        <option value="United Kingdom" ${sel(co,'United Kingdom')}>United Kingdom</option>
       </select>
     </div>
-    <div class="form-group">
-      <label>Phone</label>
-      <input type="text" id="${prefix}-phone" value="${v('phone')}">
-    </div>`;
+    <div class="form-group"><label>Phone</label><input type="text" id="${pfx}-phone" value="${v('phone')}"></div>`;
 }
+function shipSection(sub){ return `
+  <div class="checkout-section">
+    <div class="checkout-section-title">Shipping Method</div>
+    <label class="shipping-option"><input type="radio" name="shipping" value="standard" checked><span style="flex:1">Standard (5-7 days)</span><span class="shipping-price">${sub>=50?'FREE':fmt(5.99)}</span></label>
+    <label class="shipping-option"><input type="radio" name="shipping" value="express"><span style="flex:1">Express (1-2 days)</span><span class="shipping-price">${fmt(14.99)}</span></label>
+  </div>`; }
+function orderSide(cart,sub){ const sh=sub>=50?0:5.99; return `
+  <div class="checkout-section">
+    <div class="checkout-section-title">Order Summary</div>
+    ${cart.map(i=>`<div class="order-summary-item"><span>${esc(i.name)} &times; ${i.qty}</span><span>${fmt(i.price*i.qty)}</span></div>`).join('')}
+    <div class="summary-row" style="padding-top:8px;"><span>Subtotal</span><span>${fmt(sub)}</span></div>
+    <div class="summary-row"><span>Shipping</span><span>${sh===0?'FREE':fmt(sh)}</span></div>
+    <div class="summary-total"><span>Total</span><span>${fmt(sub+sh)}</span></div>
+  </div>`; }
 
-function shippingSection(subtotal) {
-  return `
-    <div class="checkout-section">
-      <div class="checkout-section-title">Shipping Method</div>
-      <label class="shipping-option">
-        <input type="radio" name="shipping" value="standard" checked>
-        <span style="flex:1;">Standard Shipping <small style="color:#888;">(5–7 business days)</small></span>
-        <span class="shipping-price">${subtotal>=50?'FREE':fmt(5.99)}</span>
-      </label>
-      <label class="shipping-option">
-        <input type="radio" name="shipping" value="express">
-        <span style="flex:1;">Express Shipping <small style="color:#888;">(1–2 business days)</small></span>
-        <span class="shipping-price">${fmt(14.99)}</span>
-      </label>
-    </div>`;
-}
-
-function orderSidebar(cart, subtotal) {
-  const ship = subtotal >= 50 ? 0 : 5.99;
-  return `
-    <div class="checkout-section">
-      <div class="checkout-section-title">Order Summary</div>
-      ${cart.map(i => `
-        <div class="order-summary-item">
-          <span>${escHtml(i.name)} × ${i.qty}</span>
-          <span>${fmt(i.price * i.qty)}</span>
-        </div>`).join('')}
-      <div class="summary-row" style="padding-top:8px;"><span>Subtotal</span><span>${fmt(subtotal)}</span></div>
-      <div class="summary-row"><span>Shipping</span><span>${ship===0?'FREE':fmt(ship)}</span></div>
-      <div class="summary-total"><span>Order Total</span><span>${fmt(subtotal+ship)}</span></div>
-    </div>`;
-}
-
-function renderCheckout(app) {
-  const cart = getCart();
-  const user = getCurrentUser();
-
-  // TC-006: empty cart
-  if (cart.length === 0) {
-    app.innerHTML = `
-      <h1 class="page-title">Checkout</h1>
-      <div class="alert alert-warning">
-        Your shopping cart is empty.
-        <a href="#/" style="color:#4a90d9;font-weight:600;">Continue shopping</a>
-      </div>`;
-    return;
+async function renderCheckout(app){
+  const cart=await fetchCart(), user=getCurrentUser();
+  if(cart.length===0){ // TC-006
+    app.innerHTML=`<h1 class="page-title">Checkout</h1><div class="alert alert-warning">Your shopping cart is empty. <a href="#/" style="color:#4a90d9;font-weight:600;">Continue shopping</a></div>`; return;
   }
-
-  const subtotal = cartTotal();
-  const sidebar  = orderSidebar(cart, subtotal);
-
-  if (!user) {
-    // TC-009: guest checkout
-    app.innerHTML = `
+  const sub=cart.reduce((s,i)=>s+i.price*i.qty,0);
+  if(!user){
+    app.innerHTML=`
       <div class="breadcrumb"><a href="#/">Home</a><span class="sep">›</span><a href="#/cart">Cart</a><span class="sep">›</span>Checkout</div>
       <h1 class="page-title">Checkout</h1>
       <div class="checkout-layout">
@@ -821,142 +579,75 @@ function renderCheckout(app) {
           <div class="checkout-section">
             <div class="checkout-section-title">Customer Information</div>
             <div class="guest-tabs">
-              <div class="guest-tab active" id="tab-guest" onclick="switchTab('guest')">Checkout as Guest</div>
-              <div class="guest-tab"        id="tab-login" onclick="switchTab('login')">Login / Register</div>
+              <div class="guest-tab active" id="tab-g" onclick="switchTab('g')">Checkout as Guest</div>
+              <div class="guest-tab"        id="tab-l" onclick="switchTab('l')">Login / Register</div>
             </div>
-            <div id="guest-wrap">${addrForm('guest', null)}</div>
-            <div id="login-wrap" style="display:none;">
+            <div id="wrap-g">${addrForm('g',null)}</div>
+            <div id="wrap-l" style="display:none;">
               <div id="co-login-alert"></div>
-              <div class="form-group"><label>Email</label><input type="email" id="co-email" placeholder="Email"></div>
-              <div class="form-group"><label>Password</label><input type="password" id="co-pwd" placeholder="Password"></div>
-              <button class="btn btn-primary" onclick="checkoutLogin()">Log in</button>
-              <p style="margin-top:10px;font-size:.82rem;">
-                <a href="#/register" style="color:#4a90d9;">Create an account</a>
-              </p>
+              <div class="form-group"><label>Email</label><input type="email" id="co-em" placeholder="Email"></div>
+              <div class="form-group"><label>Password</label><input type="password" id="co-pw" placeholder="Password"></div>
+              <button class="btn btn-primary" onclick="coLogin()">Log in</button>
+              <p style="margin-top:10px;font-size:.82rem;"><a href="#/register" style="color:#4a90d9;">Create account</a></p>
             </div>
           </div>
-          ${shippingSection(subtotal)}
+          ${shipSection(sub)}
           <div id="co-alert"></div>
-          <button class="btn btn-success btn-lg btn-block" onclick="submitGuestCheckout()">Confirm Order →</button>
+          <button class="btn btn-success btn-lg btn-block" id="confirm-btn" onclick="confirmGuest()">Confirm Order</button>
         </div>
-        <div>${sidebar}</div>
+        <div>${orderSide(cart,sub)}</div>
       </div>`;
-  } else {
-    // TC-010: registered user checkout (pre-filled address)
-    app.innerHTML = `
+  }else{
+    app.innerHTML=`
       <div class="breadcrumb"><a href="#/">Home</a><span class="sep">›</span><a href="#/cart">Cart</a><span class="sep">›</span>Checkout</div>
       <h1 class="page-title">Checkout</h1>
       <div class="checkout-layout">
         <div>
           <div class="checkout-section">
             <div class="checkout-section-title">Billing Address</div>
-            ${addrForm('billing', user.address)}
+            ${addrForm('b',user.address)}
           </div>
-          ${shippingSection(subtotal)}
+          ${shipSection(sub)}
           <div id="co-alert"></div>
-          <button class="btn btn-success btn-lg btn-block" onclick="submitRegisteredCheckout()">Confirm Order →</button>
+          <button class="btn btn-success btn-lg btn-block" id="confirm-btn" onclick="confirmRegistered()">Confirm Order</button>
         </div>
-        <div>${sidebar}</div>
+        <div>${orderSide(cart,sub)}</div>
       </div>`;
   }
 }
-
-function switchTab(tab) {
-  document.getElementById('tab-guest').className = 'guest-tab' + (tab==='guest'?' active':'');
-  document.getElementById('tab-login').className = 'guest-tab' + (tab==='login'?' active':'');
-  document.getElementById('guest-wrap').style.display = tab==='guest' ? '' : 'none';
-  document.getElementById('login-wrap').style.display = tab==='login' ? '' : 'none';
-}
-
-function checkoutLogin() {
-  const email = document.getElementById('co-email').value.trim();
-  const pwd   = document.getElementById('co-pwd').value;
-  const user  = getUsers().find(u => u.email === email && u.password === pwd);
-  if (user) {
-    saveCurrentUser(user);
-    renderHeader();
-    renderCheckout(document.getElementById('app'));
-  } else {
-    document.getElementById('co-login-alert').innerHTML =
-      '<div class="alert alert-error">Login was unsuccessful. Please correct the errors and try again.</div>';
-  }
-}
-
-function validateAddr(prefix) {
-  const ids = [prefix+'-fn', prefix+'-ln', prefix+'-email', prefix+'-addr', prefix+'-city', prefix+'-zip'];
-  return ids.every(id => { const el = document.getElementById(id); return el && el.value.trim() !== ''; });
-}
-
-function submitGuestCheckout() {
-  if (!validateAddr('guest')) {
-    document.getElementById('co-alert').innerHTML = '<div class="alert alert-error">Please fill in all required fields.</div>';
-    return;
-  }
-  placeOrder();
-}
-
-function submitRegisteredCheckout() {
-  if (!validateAddr('billing')) {
-    document.getElementById('co-alert').innerHTML = '<div class="alert alert-error">Please fill in all required fields.</div>';
-    return;
-  }
-  const user = getCurrentUser();
-  if (user) {
-    user.address = {
-      firstName: document.getElementById('billing-fn').value,
-      lastName:  document.getElementById('billing-ln').value,
-      address1:  document.getElementById('billing-addr').value,
-      city:      document.getElementById('billing-city').value,
-      zip:       document.getElementById('billing-zip').value,
-      country:   document.getElementById('billing-country').value,
-      phone:     document.getElementById('billing-phone').value,
-    };
-    saveCurrentUser(user);
-    const users = getUsers();
-    const idx   = users.findIndex(u => u.email === user.email);
-    if (idx !== -1) { users[idx] = user; saveUsers(users); }
-  }
-  placeOrder();
-}
-
-function placeOrder() {
-  const orderId = String(Math.floor(100000 + Math.random() * 900000));
-  saveCart([]);
-  renderHeader();
-  navigate('/order-confirmed?order=' + orderId);
-}
+function switchTab(t){ document.getElementById('tab-g').className='guest-tab'+(t==='g'?' active':''); document.getElementById('tab-l').className='guest-tab'+(t==='l'?' active':''); document.getElementById('wrap-g').style.display=t==='g'?'':'none'; document.getElementById('wrap-l').style.display=t==='l'?'':'none'; }
+async function coLogin(){ const em=document.getElementById('co-em').value.trim(),pw=document.getElementById('co-pw').value; try{ const d=await api('POST','/auth/login',{email:em,password:pw}); saveCurrentUser(d.user); renderHeader(); await renderCheckout(document.getElementById('app')); }catch(err){ document.getElementById('co-login-alert').innerHTML=`<div class="alert alert-error">${esc(err.message)}</div>`; } }
+function getAddr(pfx){ const g=id=>document.getElementById(pfx+'-'+id)?.value.trim(); const fn=g('fn'),ln=g('ln'),em=g('em'),addr=g('addr'),city=g('city'),zip=g('zip'); if(!fn||!ln||!em||!addr||!city||!zip) return null; return{firstName:fn,lastName:ln,email:em,address1:addr,city,zip,country:document.getElementById(pfx+'-country')?.value||'',phone:document.getElementById(pfx+'-phone')?.value||''}; }
+async function placeOrder(billing){ const cart=await fetchCart(), user=getCurrentUser(), sub=cart.reduce((s,i)=>s+i.price*i.qty,0), sh=sub>=50?0:5.99, ship=document.querySelector('input[name=shipping]:checked')?.value||'standard'; const order=await api('POST','/orders',{sessionId:getSessionId(),userId:user?.id||null,customerEmail:billing.email,billingAddress:billing,shippingMethod:ship,items:cart.map(i=>({productId:i.productId,name:i.name,price:i.price,qty:i.qty})),subtotal:sub,shippingCost:sh,total:sub+sh,status:'confirmed',createdAt:new Date().toISOString()}); await clearCart(); navigate('/order-confirmed?order='+order.id); }
+async function confirmGuest(){ const addr=getAddr('g'); if(!addr){document.getElementById('co-alert').innerHTML='<div class="alert alert-error">Please fill in all required fields.</div>';return;} const btn=document.getElementById('confirm-btn'); btn.disabled=true; try{await placeOrder(addr);}catch(err){document.getElementById('co-alert').innerHTML=`<div class="alert alert-error">${esc(err.message)}</div>`;btn.disabled=false;} }
+async function confirmRegistered(){ const addr=getAddr('b'); if(!addr){document.getElementById('co-alert').innerHTML='<div class="alert alert-error">Please fill in all required fields.</div>';return;} const btn=document.getElementById('confirm-btn'); btn.disabled=true; try{ const user=getCurrentUser(); if(user){const{email:_,...addrOnly}=addr;await api('PATCH',`/users/${user.id}`,{address:addrOnly});saveCurrentUser({...user,address:addrOnly});} await placeOrder(addr); }catch(err){document.getElementById('co-alert').innerHTML=`<div class="alert alert-error">${esc(err.message)}</div>`;btn.disabled=false;} }
 
 // ============================================================
-// ORDER CONFIRMED — TC-009 / TC-010
+// ORDER CONFIRMED  (TC-009 / TC-010)
 // ============================================================
-function renderOrderConfirmed(app, orderId) {
-  app.innerHTML = `
-    <div class="order-confirmed-box">
-      <div class="confirmed-icon">✅</div>
-      <h2 class="confirmed-title">Your order has been successfully processed!</h2>
-      <p class="confirmed-order-num">Order number: <strong>#${escHtml(orderId)}</strong></p>
-      <p class="confirmed-msg">
-        Thank you for shopping with us. A confirmation email has been sent.<br>
-        Your order will be delivered in 5–7 business days.
-      </p>
-      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
-        <a href="#/" class="btn btn-primary">Continue Shopping</a>
-        <a href="#/account" class="btn btn-outline">My Account</a>
-      </div>
-    </div>`;
-}
+function renderOrderConfirmed(app,orderId){ app.innerHTML=`
+  <div class="order-confirmed-box">
+    <div class="confirmed-icon">&#x2705;</div>
+    <h2 class="confirmed-title">Your order has been successfully processed!</h2>
+    <p class="confirmed-order-num">Order number: <strong>#${esc(String(orderId))}</strong></p>
+    <p class="confirmed-msg">Thank you for shopping with us. Your order will be delivered in 5&ndash;7 business days.</p>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+      <a href="#/" class="btn btn-primary">Continue Shopping</a>
+      <a href="#/account?tab=orders" class="btn btn-outline">My Orders</a>
+    </div>
+  </div>`; }
 
 // ============================================================
 // ACCOUNT
 // ============================================================
-function renderAccount(app, tab) {
-  const user = getCurrentUser();
-  if (!user) { navigate('/login'); return; }
-
-  const tabs = { info: accountInfo, addresses: accountAddresses, orders: accountOrders };
-  const content = (tabs[tab] || accountInfo)(user);
-
-  app.innerHTML = `
+async function renderAccount(app,tab){
+  const user=getCurrentUser(); if(!user){navigate('/login');return;}
+  let content;
+  if(tab==='info') content=accInfoHtml(user);
+  else if(tab==='addresses') content=accAddrHtml(user);
+  else if(tab==='orders') content=await accOrdersHtml(user);
+  else content=accInfoHtml(user);
+  app.innerHTML=`
     <div class="breadcrumb"><a href="#/">Home</a><span class="sep">›</span>My Account</div>
     <h1 class="page-title">My Account</h1>
     <div class="account-layout">
@@ -964,83 +655,17 @@ function renderAccount(app, tab) {
         <a href="#/account?tab=info"      class="${tab==='info'?'active':''}">Account Info</a>
         <a href="#/account?tab=addresses" class="${tab==='addresses'?'active':''}">Address Book</a>
         <a href="#/account?tab=orders"    class="${tab==='orders'?'active':''}">Order History</a>
-        <a href="#/" onclick="logout()" class="danger">Log Out</a>
+        <a href="#/" onclick="doLogout()" class="danger">Log Out</a>
       </div>
       <div>${content}</div>
     </div>`;
 }
-
-function accountInfo(user) {
-  return `
-    <div class="form-card">
-      <h2 style="font-size:1rem;font-weight:700;margin-bottom:14px;">Account Details</h2>
-      <div class="form-group"><label>First Name</label><input type="text" id="acc-fn" value="${escHtml(user.firstName||'')}"></div>
-      <div class="form-group"><label>Last Name</label><input type="text" id="acc-ln" value="${escHtml(user.lastName||'')}"></div>
-      <div class="form-group"><label>Email</label><input type="email" value="${escHtml(user.email)}" readonly style="background:#f5f5f5;"></div>
-      <button class="btn btn-primary" onclick="saveAccInfo()">Save Changes</button>
-    </div>`;
-}
-
-function saveAccInfo() {
-  const user = getCurrentUser();
-  user.firstName = document.getElementById('acc-fn').value;
-  user.lastName  = document.getElementById('acc-ln').value;
-  saveCurrentUser(user);
-  const users = getUsers(), idx = users.findIndex(u => u.email === user.email);
-  if (idx !== -1) { users[idx] = user; saveUsers(users); }
-  showToast('Account info saved.', 'success');
-}
-
-function accountAddresses(user) {
-  const a = user.address;
-  return `
-    <div class="form-card">
-      <h2 style="font-size:1rem;font-weight:700;margin-bottom:14px;">Default Shipping Address</h2>
-      ${a
-        ? `<div style="background:#f9f9f9;border:1px solid #eee;border-radius:3px;padding:14px;margin-bottom:14px;font-size:.9rem;line-height:1.7;">
-             ${escHtml(a.firstName)} ${escHtml(a.lastName)}<br>
-             ${escHtml(a.address1)}<br>
-             ${escHtml(a.city)}, ${escHtml(a.zip)}<br>
-             ${escHtml(a.country)}
-             ${a.phone ? '<br>'+escHtml(a.phone) : ''}
-           </div>
-           <button class="btn btn-outline btn-sm" onclick="showAddrForm()">Edit Address</button>`
-        : `<p style="color:#888;margin-bottom:14px;">No address saved yet.</p>
-           <button class="btn btn-primary btn-sm" onclick="showAddrForm()">Add Address</button>`}
-      <div id="addr-form" style="display:none;margin-top:16px;">
-        ${addrForm('adr', a)}
-        <button class="btn btn-primary" onclick="saveAddr()">Save Address</button>
-      </div>
-    </div>`;
-}
-
-function showAddrForm() { document.getElementById('addr-form').style.display = ''; }
-
-function saveAddr() {
-  const user = getCurrentUser();
-  user.address = {
-    firstName: document.getElementById('adr-fn').value,
-    lastName:  document.getElementById('adr-ln').value,
-    address1:  document.getElementById('adr-addr').value,
-    city:      document.getElementById('adr-city').value,
-    zip:       document.getElementById('adr-zip').value,
-    country:   document.getElementById('adr-country').value,
-    phone:     document.getElementById('adr-phone').value,
-  };
-  saveCurrentUser(user);
-  const users = getUsers(), idx = users.findIndex(u => u.email === user.email);
-  if (idx !== -1) { users[idx] = user; saveUsers(users); }
-  renderAccount(document.getElementById('app'), 'addresses');
-  showToast('Address saved successfully.', 'success');
-}
-
-function accountOrders() {
-  return `
-    <div class="form-card">
-      <h2 style="font-size:1rem;font-weight:700;margin-bottom:14px;">Order History</h2>
-      <p style="color:#888;font-size:.9rem;">No orders found.</p>
-    </div>`;
-}
+function accInfoHtml(u){ return `<div class="form-card"><h2 style="font-size:1rem;font-weight:700;margin-bottom:14px;">Account Details</h2><div class="form-group"><label>First Name</label><input type="text" id="acc-fn" value="${esc(u.firstName||'')}"></div><div class="form-group"><label>Last Name</label><input type="text" id="acc-ln" value="${esc(u.lastName||'')}"></div><div class="form-group"><label>Email</label><input value="${esc(u.email)}" readonly style="background:#f5f5f5;width:100%;padding:9px 12px;border:1px solid #ccc;border-radius:3px;"></div><button class="btn btn-primary" onclick="saveAccInfo()">Save Changes</button></div>`; }
+async function saveAccInfo(){ const u=getCurrentUser(),fn=document.getElementById('acc-fn').value,ln=document.getElementById('acc-ln').value; try{await api('PATCH',`/users/${u.id}`,{firstName:fn,lastName:ln});saveCurrentUser({...u,firstName:fn,lastName:ln});renderHeader();showToast('Saved.','success');}catch(e){showToast(e.message,'err');} }
+function accAddrHtml(u){ const a=u.address; return `<div class="form-card"><h2 style="font-size:1rem;font-weight:700;margin-bottom:14px;">Default Shipping Address</h2>${a?`<div style="background:#f9f9f9;border:1px solid #eee;border-radius:3px;padding:14px;margin-bottom:14px;font-size:.9rem;line-height:1.7;">${esc(a.firstName)} ${esc(a.lastName)}<br>${esc(a.address1)}<br>${esc(a.city)}, ${esc(a.zip)}<br>${esc(a.country)}${a.phone?'<br>'+esc(a.phone):''}</div><button class="btn btn-outline btn-sm" onclick="showAddrForm()">Edit</button>`:`<p style="color:#888;margin-bottom:14px;">No address saved.</p><button class="btn btn-primary btn-sm" onclick="showAddrForm()">Add</button>`}<div id="addr-form" style="display:none;margin-top:16px;">${addrForm('adr',a)}<button class="btn btn-primary" onclick="saveAddr()">Save Address</button></div></div>`; }
+function showAddrForm(){ document.getElementById('addr-form').style.display=''; }
+async function saveAddr(){ const u=getCurrentUser(),d=getAddr('adr'); if(!d){showToast('Fill required fields.','err');return;} const{email:_,...addr}=d; try{await api('PATCH',`/users/${u.id}`,{address:addr});saveCurrentUser({...u,address:addr});await renderAccount(document.getElementById('app'),'addresses');showToast('Address saved.','success');}catch(e){showToast(e.message,'err');} }
+async function accOrdersHtml(u){ const orders=await api('GET',`/orders?userId=${u.id}`); if(!orders.length) return `<div class="form-card"><h2 style="font-size:1rem;font-weight:700;margin-bottom:14px;">Order History</h2><p style="color:#888;">No orders found.</p></div>`; return `<div class="form-card"><h2 style="font-size:1rem;font-weight:700;margin-bottom:14px;">Order History</h2><table class="cart-table"><thead><tr><th>Order #</th><th>Date</th><th>Items</th><th>Total</th><th>Status</th></tr></thead><tbody>${orders.map(o=>`<tr><td>#${o.id}</td><td>${o.createdAt?new Date(o.createdAt).toLocaleDateString():'—'}</td><td>${(o.items||[]).length}</td><td>${fmt(o.total||0)}</td><td>${o.status||'confirmed'}</td></tr>`).join('')}</tbody></table></div>`; }
 </script>
 </body>
 </html>

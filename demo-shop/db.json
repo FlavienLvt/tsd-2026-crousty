@@ -1,0 +1,36 @@
+{
+  "products": [
+    { "id": 1,  "name": "14.1-inch Laptop",        "category": "Laptops",     "price": 699.99,  "icon": "💻", "desc": "Compact 14.1-inch laptop with Intel Core i5, 8 GB RAM, and 256 GB SSD." },
+    { "id": 2,  "name": "Gaming Laptop 15.6-inch",  "category": "Laptops",     "price": 1199.99, "icon": "🎮", "desc": "High-performance gaming machine with RTX 3060, 16 GB RAM, and 144 Hz display." },
+    { "id": 3,  "name": "MacBook Pro 14-inch",       "category": "Laptops",     "price": 1999.99, "icon": "🍎", "desc": "Apple MacBook Pro with M3 chip, 16 GB unified memory, and 512 GB SSD." },
+    { "id": 4,  "name": "Laptop Stand Adjustable",   "category": "Laptops",     "price": 49.99,   "icon": "🖥️", "desc": "Ergonomic aluminum stand compatible with 11 to 17 inch devices." },
+    { "id": 5,  "name": "Samsung Galaxy S24",        "category": "Phones",      "price": 799.99,  "icon": "📱", "desc": "Samsung flagship with 200 MP camera, 8 GB RAM, and 5G connectivity." },
+    { "id": 6,  "name": "iPhone 16",                 "category": "Phones",      "price": 999.99,  "icon": "📱", "desc": "Apple iPhone 16 with A18 chip, ProMotion display, and Dynamic Island." },
+    { "id": 7,  "name": "Wireless Headphones Pro",   "category": "Audio",       "price": 149.99,  "icon": "🎧", "desc": "Over-ear headphones with active noise cancellation and 30-hour battery." },
+    { "id": 8,  "name": "Bluetooth Speaker",         "category": "Audio",       "price": 89.99,   "icon": "🔊", "desc": "Waterproof portable speaker with 360 degree sound and 20-hour battery." },
+    { "id": 9,  "name": "USB-C Hub 7-in-1",          "category": "Accessories", "price": 59.99,   "icon": "🔌", "desc": "Multiport hub: HDMI 4K, 3x USB-A, SD card, USB-C Power Delivery 100 W." },
+    { "id": 10, "name": "Wireless Mouse",            "category": "Accessories", "price": 39.99,   "icon": "🖱️", "desc": "Silent ergonomic mouse with 2.4 GHz wireless and 12-month battery." },
+    { "id": 11, "name": "Mechanical Keyboard",       "category": "Accessories", "price": 129.99,  "icon": "⌨️", "desc": "TKL mechanical keyboard with Cherry MX switches and per-key RGB backlight." },
+    { "id": 12, "name": "Laptop Bag 15-inch",        "category": "Accessories", "price": 59.99,   "icon": "👜", "desc": "Water-resistant bag with padded compartments for up to 15.6-inch devices." }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "email": "demo@webshop.com",
+      "password": "demo123",
+      "firstName": "Demo",
+      "lastName": "User",
+      "address": {
+        "firstName": "Demo",
+        "lastName": "User",
+        "address1": "123 Main Street",
+        "city": "New York",
+        "zip": "10001",
+        "country": "United States",
+        "phone": "555-0100"
+      }
+    }
+  ],
+  "cart": [],
+  "orders": []
+}
