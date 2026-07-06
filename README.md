@@ -8,7 +8,7 @@ Team name: Crousty
 
 Application name: Demo Web Shop
 
-Application URL: https://flavienlvt.github.io/tsd-2026-crousty/demo-shop/
+Application URL: http://localhost:3001 (run `cd demo-shop && npm start` first)
 
 ## Project goal
 

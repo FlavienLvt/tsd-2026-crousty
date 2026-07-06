@@ -19,7 +19,7 @@ This document outlines the testing strategy for the **Demo Web Shop** project. T
 ## 4. Test Environment
 * **OS:** Windows 11 / macOS
 * **Browser:** Google Chrome (Latest Version)
-* **Application URL:** https://flavienlvt.github.io/tsd-2026-crousty/demo-shop/
+* **Application URL:** http://localhost:3001 (run `cd demo-shop && npm start` first)
 
 ## 5. Risks and Mitigation
 * **Risk:** The demo application might reset its database, causing test data loss.

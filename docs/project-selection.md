@@ -4,7 +4,7 @@
 Demo Web Shop
 
 ## Project URL
-Lorem Ipsum
+http://localhost:3001 (run `cd demo-shop && npm start` first)
 
 ## Application type
 Web *(Note: As identified in our risks, we might need to pair this with a public API sandbox like JSONPlaceholder or Restful Booker for Lab 6 if no internal API is accessible.)*
