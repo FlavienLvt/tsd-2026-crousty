@@ -19,7 +19,7 @@ The tests require the backend to be running at `http://localhost:3001`.
 
 ```bash
 cd demo-shop
-npm install        # first time only
+npm install   # required on every new machine (node_modules is not committed to git)
 npm start
 ```
 

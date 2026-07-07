@@ -28,3 +28,17 @@ coverage/
 ## Node.js
 node_modules/
 package-lock.json
+
+## Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+env/
+
+## Robot Framework generated outputs (keep .gitkeep to track the results/ folder)
+automation/robot/results/output.xml
+automation/robot/results/log.html
+automation/robot/results/report.html
+automation/robot/results/selenium-screenshot-*.png
