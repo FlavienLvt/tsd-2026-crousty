@@ -236,11 +236,12 @@ Postman collection and environment variables to be documented in `automation/pos
 
 | Lab | Tool | Tests | Passed | Failed |
 |---|---|---|---|---|
-| Lab 2 | JUnit 5 | 6 | 6 | 0 |
 | Lab 3 (manual) | Manual | 10 | 8 | 2 (BUG-001) |
 | Lab 4 | Selenium WebDriver | 3 | 3 | 0 |
 | Lab 5 | Robot Framework | 2 | 2 | 0 |
 | Lab 6 | Postman | TBD | TBD | TBD |
+
+> **Note:** Lab 2 (JUnit — `Rating` class) is a standalone unit testing exercise unrelated to the Demo Web Shop and is therefore not included in this project results table. It is documented separately in section 8.
 
 **Overall automated coverage:** 5 test cases automated across 2 frameworks (TC-001 in both,
 TC-002 and TC-003 in Selenium only, TC-004 in Robot only). TC-005 through TC-010 remain manual.

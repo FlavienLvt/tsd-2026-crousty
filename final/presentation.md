@@ -168,13 +168,14 @@ and data integrity.
 
 | Lab | Tool | Tests | ✅ Pass | ❌ Fail |
 |---|---|---|---|---|
-| Lab 2 | JUnit 5 | 6 | 6 | 0 |
-| Lab 3 | Manual | 10 | 8 | 2 |
-| Lab 4 | Selenium | 3 | 3 | 0 |
+| Lab 3 | Manual (Demo Web Shop) | 10 | 8 | 2 |
+| Lab 4 | Selenium WebDriver | 3 | 3 | 0 |
 | Lab 5 | Robot Framework | 2 | 2 | 0 |
 | Lab 6 | Postman | TBD | — | — |
 
-**Total automated:** 11 tests · 11 passed · 0 failed · 1 defect open (BUG-001)
+> Lab 2 (JUnit — Rating class) is a standalone exercise, not a Demo Web Shop test.
+
+**Total automated:** 5 tests · 5 passed · 0 failed · 1 defect open (BUG-001)
 
 ![w:480](../reports/coverage_result.png)
 
