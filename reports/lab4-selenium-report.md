@@ -50,7 +50,7 @@ Command: `cd automation\selenium && mvnw.cmd test`
 [INFO] Finished at: 2026-07-06T13:39:00+02:00
 ```
 
-Screenshot: `reports/lab4-selenium-evidence.png`
+![Lab 4 — Selenium BUILD SUCCESS](../reports/lab4-selenium-evidence.png)
 
 | Test | Status | Assertion verified |
 |------|--------|--------------------|

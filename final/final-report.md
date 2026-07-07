@@ -177,6 +177,8 @@ Test file: [`automation/selenium/src/test/java/DemoWebShopTest.java`](../automat
 **Execution:** `cd automation\selenium && mvnw.cmd test`  
 **Result:** `Tests run: 3, Failures: 0, Errors: 0, Skipped: 0 — BUILD SUCCESS` (2026-07-06, 15.63s)
 
+![Selenium BUILD SUCCESS](../reports/lab4-selenium-evidence.png)
+
 ### Key technical decisions
 
 - **Selenium Manager** (built-in since v4) eliminates manual ChromeDriver setup
@@ -202,7 +204,9 @@ Keywords: [`automation/robot/resources/common_keywords.robot`](../automation/rob
 
 **Execution:** `cd automation\robot && robot --outputdir results tests/demo_shop_tests.robot`
 
-> Evidence: screenshot of `results/report.html` to add after running.
+![Robot Framework — app during test](../reports/lab5-robot-screenshot.png)
+
+![Robot Framework — HTML report](../reports/lab5-robot-report.png)
 
 ### Custom keywords
 

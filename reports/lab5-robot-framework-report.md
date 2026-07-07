@@ -83,9 +83,13 @@ Report:  results/report.html
 Elapsed time: 00:00:08.xxx
 ```
 
-> **Evidence:**
-> - `reports/lab5-robot-screenshot.png` — Chrome opened by Robot Framework showing the Demo Web Shop home page (auto-captured during test execution)
-> - `reports/lab5-robot-report.png` — screenshot of `results/report.html` showing 2 PASS *(open `automation\robot\results\report.html` in browser and screenshot)*
+**Chrome opened during test execution (auto-captured by Robot Framework):**
+
+![Lab 5 — Chrome opened by Robot Framework](../reports/lab5-robot-screenshot.png)
+
+**Robot Framework HTML report (2 PASS, 0 FAIL):**
+
+![Lab 5 — Robot Framework report](../reports/lab5-robot-report.png)
 
 ---
 
