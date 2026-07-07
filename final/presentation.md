@@ -119,44 +119,29 @@ style: |
 # 5. Selenium WebDriver Automation
 
 **Tool:** Selenium 4.18.1 + JUnit 5 · Java  
-**File:** `automation/selenium/src/test/java/DemoWebShopTest.java`
 
-| Test | TC | Assertion | Result |
-|---|---|---|---|
-| `TC001_shouldLoginWithValidCredentials` | TC-001 | Email link visible in header | ✅ PASS |
-| `TC002_shouldDisplayResultsForLaptop` | TC-002 | `.page-title` + `product-card` > 0 | ✅ PASS |
-| `TC003_shouldAddProductToCart` | TC-003 | Toast visible + cart count ↑ | ✅ PASS |
+| Test | TC | Result |
+|---|---|---|
+| `TC001_shouldLoginWithValidCredentials` | TC-001 | ✅ PASS |
+| `TC002_shouldDisplayResultsForLaptop` | TC-002 | ✅ PASS |
+| `TC003_shouldAddProductToCart` | TC-003 | ✅ PASS |
 
-```
-Tests run: 3, Failures: 0, Errors: 0 — BUILD SUCCESS
-Total time: 37.205 s (2026-07-06 13:39)
-```
-
-**Key choices:** Selenium Manager (no ChromeDriver setup) ·
-`WebDriverWait` (no sleep) · `localStorage.clear()` for isolation
+![w:780](../reports/lab4-selenium-evidence.png)
 
 ---
 
 # 6. Robot Framework Automation
 
 **Tool:** Robot Framework 7.1.1 + SeleniumLibrary 6.7.1 · Python  
-**Files:** `automation/robot/tests/` · `automation/robot/resources/`
 
 | Test | TC | Type | Result |
 |---|---|---|---|
 | TC-001 Valid Login Shows User Email In Header | TC-001 | Positive | ✅ PASS |
 | TC-004 Invalid Login Shows Error Message | TC-004 | Negative | ✅ PASS |
 
-**Custom keywords:** `Open Demo Web Shop` · `Navigate To Login Page` ·
-`Fill Login Form` · `Verify User Is Logged In` · `Verify Login Error Message`
+**Keywords:** `Open Demo Web Shop` · `Navigate To Login Page` · `Fill Login Form` · `Verify User Is Logged In` · `Verify Login Error Message`
 
-```robot
-TC-001 Valid Login Shows User Email In Header
-    Open Demo Web Shop       ${URL}    ${BROWSER}
-    Navigate To Login Page   ${URL}
-    Fill Login Form          ${VALID_EMAIL}    ${VALID_PASSWORD}
-    Verify User Is Logged In ${VALID_EMAIL}
-```
+![w:780](../reports/lab5-robot-report.png)
 
 ---
 
@@ -189,8 +174,9 @@ and data integrity.
 | Lab 5 | Robot Framework | 2 | 2 | 0 |
 | Lab 6 | Postman | TBD | — | — |
 
-**Total automated:** 11 tests · 11 passed · 0 failed  
-**Total defects:** 1 open (BUG-001 — qty 0 accepted silently)
+**Total automated:** 11 tests · 11 passed · 0 failed · 1 defect open (BUG-001)
+
+![w:480](../reports/coverage_result.png)
 
 ---
 
