@@ -94,7 +94,7 @@ style: |
 | TC-009 | Full checkout – Guest | Flow | ✅ PASS |
 | TC-010 | Full checkout – Registered | Flow | ✅ PASS |
 
-**8/10 PASS · 2 defective (BUG-001)**
+**9/10 PASS · 1 defective (BUG-001)**
 
 ---
 
@@ -168,7 +168,7 @@ and data integrity.
 
 | Lab | Tool | Tests | ✅ Pass | ❌ Fail |
 |---|---|---|---|---|
-| Lab 3 | Manual (Demo Web Shop) | 10 | 8 | 2 |
+| Lab 3 | Manual (Demo Web Shop) | 10 | 9 | 1 |
 | Lab 4 | Selenium WebDriver | 3 | 3 | 0 |
 | Lab 5 | Robot Framework | 2 | 2 | 0 |
 | Lab 6 | Postman | TBD | — | — |
@@ -200,11 +200,10 @@ The Demo Web Shop project exercised the **full testing lifecycle**:
 
 manual design → unit testing → UI automation → API testing
 
-**8/10 manual tests pass · 1 confirmed defect · 11 automated tests green**
+**9/10 manual tests pass · 1 confirmed defect · 11 automated tests green**
 
 Each tool has its place: JUnit for logic, Selenium for Java-team automation,
 Robot Framework for readable acceptance tests, Postman for API contracts.
 
 ---
 
-*Generated with Claude Code · Team Crousty · TSD 2026*
