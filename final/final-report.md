@@ -110,8 +110,8 @@ Full table: [`manual-tests/manual-test-cases.md`](../manual-tests/manual-test-ca
 | TC-004 | PASS | Error banner displayed |
 | TC-005 | PASS | "No products were found" message shown |
 | TC-006 | PASS | Checkout button disabled for empty cart |
-| TC-007 | FAIL | See BUG-001 (quantity 0 accepted silently) |
-| TC-008 | FAIL | App accepts qty 0 and shows success — defect logged |
+| TC-007 | PASS | Password length validated correctly by the application |
+| TC-008 | FAIL | App accepts qty 0 and shows success — defect logged (BUG-001) |
 | TC-009 | PASS | Order confirmation shown |
 | TC-010 | PASS | Order confirmation shown with saved address |
 
@@ -259,7 +259,7 @@ local development to a staging server requires only this one value to change.
 
 | Lab | Tool | Tests | Passed | Failed |
 |---|---|---|---|---|
-| Lab 3 (manual) | Manual | 10 | 8 | 2 (BUG-001) |
+| Lab 3 (manual) | Manual | 10 | 9 | 1 (BUG-001) |
 | Lab 4 | Selenium WebDriver | 3 | 3 | 0 |
 | Lab 5 | Robot Framework | 2 | 2 | 0 |
 | Lab 6 | Postman | 5 | 5 | 0 |

@@ -118,10 +118,6 @@ because it shows that the application still lacks a validation rule for a very
 small but meaningful boundary condition.
 -->
 
-<!--
-Our ten test cases cover four dimensions of functional quality. Positive scenarios confirm that nominal features work correctly under normal conditions. Negative scenarios verify behavior with incorrect inputs or impossible flows. Boundary tests probe the application's validation limits. TC-009 and TC-010 cover the complete checkout journey in both guest and registered user mode. Result: 8 out of 10 tests pass. The two failures point to a single defect in quantity handling — BUG-001 — which we will detail on the next slide.
--->
-
 ---
 
 # 4. Defect Report — BUG-001
@@ -261,7 +257,7 @@ The Demo Web Shop project exercised the **full testing lifecycle**:
 
 manual design → unit testing → UI automation → API testing
 
-**8/10 manual tests pass · 1 confirmed defect · 10 automated tests green**
+**9/10 manual tests pass · 1 confirmed defect · 10 automated tests green**
 
 Each tool has its place: JUnit for logic, Selenium for Java-team automation,
 Robot Framework for readable acceptance tests, Postman for API contracts.
