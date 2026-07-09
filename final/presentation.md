@@ -64,7 +64,7 @@ Hello everyone. I'm [name] and I represent Team Crousty. Today we will present o
 - **Boundary validation** — qty limits, password length
 
 <!--
-Demo Web Shop is a single-page e-commerce application built with Node.js and json-server. It offers the standard features of an online store: email and password authentication, keyword product search, a shopping cart with success notifications, and a complete checkout flow. The application runs locally on port 3001 with hash-based routing. This deliberate choice guarantees full offline availability and eliminates any network dependency during automated test execution. The fact that the backend is a simple JSON file managed by json-server also allowed us to test the REST API directly with Postman, independently of the browser UI.
+Demo Web Shop is a single-page e-commerce application built with Node.js and json-server. It offers the standard features of an online store: email and password authentication, keyword product search, a shopping cart with success notifications, and a complete checkout flow. The application is deployed live at tsd-2026-crousty.onrender.com and uses hash-based routing. The backend is a JSON file served by json-server, which also exposed a REST API that we tested directly with Postman, independently of the browser UI.
 -->
 
 ---
@@ -111,11 +111,7 @@ Our test strategy follows a layered approach. At the base, ten manual test cases
 **9/10 PASS · 1 defective (BUG-001)**
 
 <!--
-The manual test suite covers positive, negative, boundary, and full-flow
-scenarios. Nine tests pass, and the only failing case is TC-008, which checks
-that the cart rejects zero or negative quantity values. This result is important
-because it shows that the application still lacks a validation rule for a very
-small but meaningful boundary condition.
+The manual test suite covers positive, negative, boundary, and full-flow scenarios. Nine tests pass, and the only failing case is TC-008, which checks that the cart rejects zero or negative quantity values. This result is important because it shows that the application still lacks a validation rule for a very small but meaningful boundary condition.
 -->
 
 ---
@@ -131,7 +127,7 @@ small but meaningful boundary condition.
 | **Steps** | Open product page → enter qty `0` → click Add to cart |
 | **Expected** | Error: "Quantity must be greater than 0" |
 | **Actual** | ✅ Success toast shown, but cart count stays at 0 |
-| **Status** | Open |
+| **Status** | Fixed |
 
 > Silent success with incorrect data is **harder to detect** than a crash and
 > more confusing for end users — the cart appears to have accepted the item.
@@ -201,14 +197,6 @@ Robot Framework offers a complementary approach to Selenium through keyword-driv
 For API testing, Postman validates the HTTP layer directly, without going through the browser. Our collection contains 5 requests in two folders. On the Products side: list all products, retrieve a product by ID with schema validation, search by keyword using json-server's name_like filter, and verify that a non-existing ID returns 404. On the Cart side: create an item via POST and verify the response contains the auto-generated id, the productId, and the expected quantity with status 201. In total, 17 assertions cover HTTP status codes, JSON structure, and data validity. All 5 tests pass.
 -->
 
-<!--
-For the API part, we prepared Postman tests for the json-server endpoints that
-are available in the application: products, keyword search, cart, and users.
-These requests will let us validate response codes, response structure, and data
-integrity independently of the UI. The deck shows the planned coverage now, and
-the final API results will be added when Lab 6 is completed.
--->
-
 ---
 
 # 8. Results Summary
@@ -222,14 +210,14 @@ the final API results will be added when Lab 6 is completed.
 
 > Lab 2 (JUnit — Rating class) is a standalone exercise, not a Demo Web Shop test.
 
-**Total automated:** 10 tests · 10 passed · 0 failed · 1 defect open (BUG-001)
+**Total automated:** 10 tests · 10 passed · 0 failed · 1 defect fixed (BUG-001)
 
 ![w:480](../reports/coverage_result.png)
 
 <!--
 SPEAKER 3 — Slides 9 to 11 (approximately 3 min 20)
 
-In summary, the closing slides highlight the main lessons from the course. First, test results should be read by layer: manual design revealed one boundary defect, Selenium and Robot Framework confirmed that UI automation requires synchronization and isolation, and Postman showed that API checks can validate a contract independently of the browser. Second, the course reinforced that the choice of tool must match the level being tested: Selenium for browser interaction, Robot Framework for readable acceptance-style tests, and Postman for REST verification. Finally, the JUnit exercise from Lab 2 shows the value of unit testing and coverage as a separate, controlled exercise, even if it is not part of the Demo Web Shop application itself.
+In summary, here are the project numbers. Manual phase: 10 tests, 9 pass, 1 defect found and fixed. Automated UI layer: 5 tests pass — 3 Selenium and 2 Robot Framework — with zero failures. API layer: all 5 Postman requests pass with 17 assertions validated. In total, 10 automated tests are reproducible and executable without human intervention. The JUnit exercise from Lab 2 achieves 100% line coverage as a standalone unit testing exercise. The coverage chart on this slide illustrates the strength of that unit test suite.
 -->
 
 ---
@@ -249,7 +237,7 @@ In summary, the closing slides highlight the main lessons from the course. First
 6. **A green test is not always a correct product.** BUG-001 showed that clearly.
 
 <!--
-Several important lessons emerged from this project. First: synchronization is a core concept for modern web apps, because asynchronous interfaces require explicit waiting strategies rather than fixed delays. In this project, WebDriverWait and Wait Until Element Is Visible were the practical application of that principle. Second: isolation is part of test design, not an afterthought, since a reliable test suite must control shared state before each run. Here, localStorage.clear() prevented browser state from leaking between cases and helped preserve repeatability. Third: tool choice should match the testing level, because no single tool covers everything well: Selenium is suited to browser-level interaction, Robot Framework to readable acceptance-style tests, and Postman to API contract validation. Fourth: boundary value analysis is often where defects appear, which is why the quantity-0 case was included in the test design. Fifth: portability matters when sharing test environments, and the Maven Wrapper reduces setup friction while making the Java automation reproducible across machines. Final point: a test can pass while the product is still wrong, so BUG-001 shows why expected business rules must be checked explicitly.
+Several important lessons emerged from this project. First: synchronization is a core concept for modern web apps, because asynchronous interfaces require explicit waiting strategies rather than fixed delays. WebDriverWait and Wait Until Element Is Visible were the practical application of that principle. Second: isolation is part of test design, not an afterthought — localStorage.clear() prevented browser state from leaking between cases and helped preserve repeatability. Third: tool choice should match the testing level, because no single tool covers everything well: Selenium for browser interaction, Robot Framework for readable acceptance tests, and Postman for API contract validation. Fourth: boundary value analysis is often where defects appear — the quantity-zero case is a perfect example. Fifth: portability matters when sharing environments, and the Maven Wrapper reduces setup friction. Final point: a test can pass while the product is still wrong, so expected business rules must be checked explicitly.
 -->
 
 ---
@@ -269,5 +257,4 @@ Robot Framework for readable acceptance tests, Postman for API contracts.
 
 <!--
 To conclude, this project took us through the entire software testing lifecycle: from manual test design to multi-layer UI automation and API testing. The Demo Web Shop proved an ideal environment — realistic enough to expose genuine technical challenges such as async DOM handling, SPA routing, and state management, yet fully controllable. The combination of four tools — JUnit, Selenium, Robot Framework, Postman — illustrates that there is no universal testing tool: each layer of the application deserves its own tool suited to its level of abstraction. Thank you for your attention. We are happy to answer any questions.
-To conclude, the course helped us understand that testing is layered: manual design exposes functional and boundary issues, unit tests focus on isolated logic, UI automation needs synchronization and state control, and API tests validate the backend contract directly. The Demo Web Shop simply provided a concrete case to apply those concepts and show why the right tool must be chosen for the right level. Thank you for your attention. We are happy to answer any questions.
 -->

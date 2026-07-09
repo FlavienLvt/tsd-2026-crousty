@@ -1,13 +1,20 @@
-# Project Risks and Open Questions
+# Project Risks and Mitigations
 
-This document tracks the potential risks associated with testing the Demo Web Shop application and lists open questions we need to resolve as the semester progresses.
+This document tracks potential risks associated with testing the Demo Web Shop application and their resolution status.
 
-## 1. Initial Project Risks
+## Risk Register
 
-| Risk | Potential Impact | Mitigation Strategy |
-| :--- | :--- | :--- |
-| **Application updates during the semester** | Automated scripts and locators might break if the developers change the UI structure. | We will keep test cases modular and use robust locators (e.g., ID, CSS selectors, or reliable XPaths) instead of absolute paths. |
-| **Test data accumulation** | Creating new accounts and addresses continuously can clutter the system, leading to conflicts or false test failures. | We will design automated tests to clean up their own data at the end of the execution (teardown), or use randomized data generators for emails and usernames. |
-| **Dynamic UI elements** | UI elements taking time to load can make Selenium automation scripts flaky and unreliable. | We will strictly use explicit waits (`WebDriverWait`) instead of hardcoded `Thread.sleep()` to wait for elements to be clickable or visible. |
-| **Lack of public API** | If the app does not have a documented API, the API testing phase (Postman) will be difficult to execute. | We will inspect the browser's Network tab to find hidden endpoints. If none are usable, we will ask the instructor for an alternative API to test. |
-| **Git merge conflicts** | Multiple team members working on the same documentation or test files could lead to complex merge conflicts and lost work. | We will stick to the rule of using one branch per task, commit small changes, and quickly communicate with the team before merging into `main`. |
+| Risk | Potential Impact | Mitigation | Status |
+| :--- | :--- | :--- | :--- |
+| **Application updates during the semester** | Automated scripts and locators break if the UI structure changes | Keep test cases modular; use stable locators (ID, CSS selectors); avoid absolute XPaths | ✅ No breaking changes occurred |
+| **Test data accumulation** | Continuous cart/order creation causes state conflicts between test runs | localStorage.clear() in @BeforeEach (Selenium); git restore demo-shop/db.json before full runs | ✅ Mitigated |
+| **Dynamic UI elements** | Async fetch calls make Selenium scripts flaky | Strict use of explicit waits (WebDriverWait, Wait Until Element Is Visible) — no Thread.sleep() | ✅ Mitigated |
+| **Lack of public API** | No REST API available for Postman testing | json-server exposes a full REST API at the same base URL — no external sandbox needed | ✅ Resolved — used own API |
+| **Git merge conflicts** | Parallel work on the same files causes lost changes | One branch per task; small focused commits; communicate before merging to main | ✅ Mitigated |
+| **Render free tier cold start** | Service spins down after 15 min inactivity; first request is slow | UptimeRobot monitor pings the URL every 5 minutes | ✅ Mitigated |
+
+## Defects Found
+
+| ID | Title | Severity | Status |
+| :--- | :--- | :--- | :--- |
+| BUG-001 | Cart accepts quantity 0 silently — no validation error | Medium | ✅ Fixed |
