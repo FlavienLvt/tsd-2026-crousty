@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: demo-web-shop
+    runtime: node
+    rootDir: demo-shop
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production

@@ -60,7 +60,7 @@ server.use((req, res, next) => {
 // ── json-server CRUD routes ───────────────────────────────────────────────────
 server.use(router);
 
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 server.listen(PORT, () => {
   console.log('\n  Demo Web Shop\n');
   console.log(`  Frontend  ->  http://localhost:${PORT}`);
