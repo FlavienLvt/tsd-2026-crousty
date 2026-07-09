@@ -289,28 +289,30 @@ local development to a staging server requires only this one value to change.
 
 ## 14. Lessons Learned
 
-1. **Explicit waits are non-negotiable for SPAs.** Hash-routing apps load content
-   asynchronously via fetch; any implicit wait or fixed sleep causes flaky tests.
-   Both `WebDriverWait` (Selenium) and `Wait Until Element Is Visible` (Robot) solved this.
+1. **Synchronization is a core testing concept for modern web apps.** The course showed that
+   asynchronous interfaces require explicit waiting strategies rather than fixed delays.
+   In this project, `WebDriverWait` and `Wait Until Element Is Visible` were the practical
+   application of that principle.
 
-2. **Test isolation requires intentional setup.** Without `localStorage.clear()`, cart state
-   leaked from TC-003 into TC-001 when run in the same browser session, causing false failures.
+2. **Isolation is part of test design, not an afterthought.** A reliable test suite must control
+   shared state before each run. Here, `localStorage.clear()` prevented browser state from
+   leaking between cases and helped preserve repeatability.
 
-3. **Robot Framework lowers the barrier for readable tests.** Keyword-driven syntax meant
-   the same test logic readable by both developer and non-developer stakeholders, with no Java
-   boilerplate.
+3. **Tool choice should match the testing level.** One lesson from the course is that no single
+   tool covers everything well. Selenium is suited to browser-level interaction, Robot Framework
+   to readable acceptance-style tests, and Postman to API contract validation.
 
-4. **Maven Wrapper (`mvnw.cmd`) is essential for team portability.** Without it, every team
-   member who lacks a local Maven installation is blocked. The wrapper downloads Maven once and
-   caches it — zero configuration for new environments.
+4. **Boundary value analysis is often where defects appear.** The course emphasized testing
+   around limits, not only nominal flows. BUG-001 came from the quantity-0 case, which confirmed
+   why edge cases must be included in the test design.
 
-5. **Cross-OS node_modules are incompatible.** Installing `node_modules` on Windows and then
-   running `npm start` from WSL causes native binary mismatches. The lesson: always install
-   dependencies from within the target OS.
+5. **Portability matters when sharing test environments.** The Maven Wrapper (`mvnw.cmd`) reduces
+   setup friction and makes the Java automation reproducible across machines, which is useful in
+   team-based projects and in coursework grading.
 
-6. **A defect in the happy path is still a defect.** BUG-001 (qty 0 accepted silently)
-   appears to succeed — the green toast fires — but the cart count does not change. Silent
-   misbehavior is harder to detect than a crash and more confusing for end users.
+6. **A test can pass while the product is still wrong.** BUG-001 demonstrates that a green result
+   does not always mean the behaviour is correct. The course reinforced the need to check the
+   expected business rule, not only the visible UI feedback.
 
 ---
 

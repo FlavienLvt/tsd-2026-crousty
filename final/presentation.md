@@ -229,7 +229,7 @@ the final API results will be added when Lab 6 is completed.
 <!--
 SPEAKER 3 — Slides 9 to 11 (approximately 3 min 20)
 
-In summary, here are the project numbers. Manual phase: 10 tests, 8 pass, 1 defect found. Automated UI layer: 5 tests pass — 3 Selenium and 2 Robot Framework — with zero failures. API layer: all 5 Postman requests pass with 17 assertions validated. In total, 10 automated tests are reproducible and executable without human intervention. One defect remains open, BUG-001, of medium severity. Additionally, the JUnit exercise from Lab 2 achieves 100% line coverage, although it is a standalone exercise independent of the Demo Web Shop project. The coverage chart on this slide illustrates the strength of that unit test suite.
+In summary, the closing slides highlight the main lessons from the course. First, test results should be read by layer: manual design revealed one boundary defect, Selenium and Robot Framework confirmed that UI automation requires synchronization and isolation, and Postman showed that API checks can validate a contract independently of the browser. Second, the course reinforced that the choice of tool must match the level being tested: Selenium for browser interaction, Robot Framework for readable acceptance-style tests, and Postman for REST verification. Finally, the JUnit exercise from Lab 2 shows the value of unit testing and coverage as a separate, controlled exercise, even if it is not part of the Demo Web Shop application itself.
 -->
 
 ---
@@ -245,6 +245,7 @@ In summary, here are the project numbers. Manual phase: 10 tests, 8 pass, 1 defe
 
 <!--
 Several important lessons emerged from this project. First: explicit waits are non-negotiable in single-page applications — any asynchronous fetch call breaks fixed sleep() calls and produces flaky tests. Second: test isolation must be enforced from the start — without localStorage.clear(), the persistent session from TC-003 contaminated TC-001 on successive runs. Third: Robot Framework does not replace Selenium but complements it — each tool has its natural audience. Fourth: the Maven Wrapper eliminates setup issues across team environments by downloading Maven automatically. Final point: BUG-001 reminds us that silent failures are more dangerous than visible crashes, and that only boundary tests can detect them.
+Several important course lessons emerged from this project. First: explicit waits are non-negotiable in single-page applications — asynchronous fetch calls make fixed sleep-based tests unreliable. Second: test isolation is part of test design — without localStorage.clear(), shared browser state can contaminate later cases. Third: tool selection depends on the testing level — Selenium is best for browser control, Robot Framework for readable acceptance tests, and Postman for API validation. Fourth: boundary testing is essential because defects often appear at the limits rather than in the nominal path. Final point: a green UI result does not always mean the behaviour is correct, and BUG-001 is a good example of why expected business rules must be checked explicitly.
 -->
 
 ---
@@ -264,4 +265,5 @@ Robot Framework for readable acceptance tests, Postman for API contracts.
 
 <!--
 To conclude, this project took us through the entire software testing lifecycle: from manual test design to multi-layer UI automation and API testing. The Demo Web Shop proved an ideal environment — realistic enough to expose genuine technical challenges such as async DOM handling, SPA routing, and state management, yet fully controllable. The combination of four tools — JUnit, Selenium, Robot Framework, Postman — illustrates that there is no universal testing tool: each layer of the application deserves its own tool suited to its level of abstraction. Thank you for your attention. We are happy to answer any questions.
+To conclude, the course helped us understand that testing is layered: manual design exposes functional and boundary issues, unit tests focus on isolated logic, UI automation needs synchronization and state control, and API tests validate the backend contract directly. The Demo Web Shop simply provided a concrete case to apply those concepts and show why the right tool must be chosen for the right level. Thank you for your attention. We are happy to answer any questions.
 -->
