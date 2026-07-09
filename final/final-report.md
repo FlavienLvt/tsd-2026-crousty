@@ -134,7 +134,7 @@ Full report: [`reports/defect-report-example.md`](../reports/defect-report-examp
 | **Steps** | Open product page → enter qty `0` → click Add to cart |
 | **Expected** | Validation error: "Quantity must be greater than 0" |
 | **Actual** | Green success toast shown, but cart counter stays at 0 — misleading UX |
-| **Status** | Open (not fixed in Demo Web Shop scope) |
+| **Status** | Fixed |
 
 ---
 
