@@ -33,7 +33,7 @@ style: |
 
 ## Team Crousty
 
-**Application:** Demo Web Shop · `http://localhost:3001`
+**Application:** Demo Web Shop · `https://tsd-2026-crousty.onrender.com`
 
 **Submission:** 9 July 2026
 
@@ -53,7 +53,7 @@ Hello everyone. I'm [name] and I represent Team Crousty. Today we will present o
 |---|---|
 | Stack | Node.js · json-server 0.17.4 · Vanilla JS |
 | Routing | Hash-based SPA (`/#/login`, `/#/cart`, …) |
-| URL | `http://localhost:3001` (local) |
+| URL | `https://tsd-2026-crousty.onrender.com` |
 
 ### Main features tested
 
@@ -183,7 +183,7 @@ Robot Framework offers a complementary approach to Selenium through keyword-driv
 
 # 7. Postman API Tests
 
-**Collection:** TSD 2026 - Crousty - API Tests · `{{BASE_URL}}` = `http://localhost:3001`
+**Collection:** TSD 2026 - Crousty - API Tests · `{{BASE_URL}}` = `https://tsd-2026-crousty.onrender.com`
 
 | # | Request | Type | Expected | Result |
 |---|---|---|---|---|

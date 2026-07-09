@@ -2,7 +2,7 @@
 
 **Team:** Crousty  
 **Course:** TSD — Testing Software & Debugging 2026  
-**Application:** Demo Web Shop (`http://localhost:3001`)  
+**Application:** Demo Web Shop (`https://tsd-2026-crousty.onrender.com`)  
 **Submission:** 2026-07-09  
 
 ---
@@ -31,7 +31,7 @@ to writing automated tests and producing this report — were performed by a sin
 ## 3. Tested Application
 
 **Name:** Demo Web Shop  
-**URL:** `http://localhost:3001` (requires `cd demo-shop && npm start`)  
+**URL:** `https://tsd-2026-crousty.onrender.com` (live) · `http://localhost:3001` (local: `cd demo-shop && npm start`)  
 **Technology stack:** Node.js, json-server 0.17.4, vanilla JavaScript (SPA with hash routing)
 
 The Demo Web Shop is a single-page e-commerce application that simulates a realistic online
@@ -224,7 +224,7 @@ Evidence: [`reports/lab6-postman-evidence.png`](../reports/lab6-postman-evidence
 ### Tool: Postman (Collection v2.1)
 
 **Collection name:** TSD 2026 - Crousty - API Tests  
-**Base URL variable:** `{{BASE_URL}}` = `http://localhost:3001`
+**Base URL variable:** `{{BASE_URL}}` = `https://tsd-2026-crousty.onrender.com`
 
 | # | Request | Method | Scenario | Status | Assertions |
 |---|---|---|---|---|---|

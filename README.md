@@ -8,7 +8,8 @@ Team name: Crousty
 
 Application name: Demo Web Shop
 
-Application URL: http://localhost:3001 (run `cd demo-shop && npm start` first)
+Application URL: https://tsd-2026-crousty.onrender.com (live)
+Local URL: http://localhost:3001 (run `cd demo-shop && npm start` first)
 
 ## Project goal
 

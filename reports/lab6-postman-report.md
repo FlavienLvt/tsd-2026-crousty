@@ -2,7 +2,7 @@
 
 **Project:** Demo Web Shop  
 **Collection:** TSD 2026 - Crousty - API Tests  
-**API base URL:** `http://localhost:3001` (json-server)  
+**API base URL:** `https://tsd-2026-crousty.onrender.com` (live) · `http://localhost:3001` (local)  
 **Date:** 2026-07-09  
 **Team:** Crousty
 
@@ -11,7 +11,7 @@
 ## 1. Overview
 
 This lab covers REST API testing using Postman. The Demo Web Shop exposes a json-server REST API
-at `http://localhost:3001`. The Postman collection targets this API directly, independently of
+at `https://tsd-2026-crousty.onrender.com`. The Postman collection targets this API directly, independently of
 the browser UI, to validate status codes, response schemas, and data integrity.
 
 **Collection file:** [`automation/postman/crousty-api-tests.postman_collection.json`](../automation/postman/crousty-api-tests.postman_collection.json)
@@ -146,8 +146,8 @@ the browser UI, to validate status codes, response schemas, and data integrity.
 
 ## 6. Collection Variable
 
-The collection uses a `BASE_URL` variable set to `http://localhost:3001`. To target a different
-environment (staging, production), only this variable needs to change — all 5 requests use
+The collection uses a `BASE_URL` variable set to `https://tsd-2026-crousty.onrender.com` (live server).
+To run locally instead, change `BASE_URL` to `http://localhost:3001` — all 5 requests use
 `{{BASE_URL}}` automatically.
 
 ---

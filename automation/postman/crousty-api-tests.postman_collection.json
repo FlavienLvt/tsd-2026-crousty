@@ -2,13 +2,13 @@
   "info": {
     "_postman_id": "c7d3e8f2-a1b4-4c9d-8e2f-3a5b6c7d8e9f",
     "name": "TSD 2026 - Crousty - API Tests",
-    "description": "API test collection for Demo Web Shop (json-server at http://localhost:3001). Covers GET and POST requests with positive and negative scenarios.",
+    "description": "API test collection for Demo Web Shop. Live server: https://tsd-2026-crousty.onrender.com. Covers GET and POST requests with positive and negative scenarios.",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
   "variable": [
     {
       "key": "BASE_URL",
-      "value": "http://localhost:3001",
+      "value": "https://tsd-2026-crousty.onrender.com",
       "type": "string"
     }
   ],
