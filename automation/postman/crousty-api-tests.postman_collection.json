@@ -1,0 +1,245 @@
+{
+  "info": {
+    "_postman_id": "c7d3e8f2-a1b4-4c9d-8e2f-3a5b6c7d8e9f",
+    "name": "TSD 2026 - Crousty - API Tests",
+    "description": "API test collection for Demo Web Shop (json-server at http://localhost:3001). Covers GET and POST requests with positive and negative scenarios.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "BASE_URL",
+      "value": "http://localhost:3001",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Products",
+      "item": [
+        {
+          "name": "GET All Products — list and schema",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"Response is a non-empty array\", function () {",
+                  "    var data = pm.response.json();",
+                  "    pm.expect(data).to.be.an('array').with.lengthOf.above(0);",
+                  "});",
+                  "",
+                  "pm.test(\"First product has id, name, price and category\", function () {",
+                  "    var first = pm.response.json()[0];",
+                  "    pm.expect(first).to.have.property('id');",
+                  "    pm.expect(first).to.have.property('name');",
+                  "    pm.expect(first).to.have.property('price');",
+                  "    pm.expect(first).to.have.property('category');",
+                  "});",
+                  "",
+                  "pm.test(\"Response time is below 500 ms\", function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(500);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/products",
+              "host": ["{{BASE_URL}}"],
+              "path": ["products"]
+            },
+            "description": "Positive test — lists all products. Asserts 200, non-empty array, and schema fields."
+          }
+        },
+        {
+          "name": "GET Product by ID — positive (id=1)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"Returned product ID matches requested ID\", function () {",
+                  "    var data = pm.response.json();",
+                  "    pm.expect(data.id).to.equal(1);",
+                  "});",
+                  "",
+                  "pm.test(\"Product has name, price, category and desc\", function () {",
+                  "    var data = pm.response.json();",
+                  "    pm.expect(data).to.have.property('name');",
+                  "    pm.expect(data).to.have.property('price');",
+                  "    pm.expect(data).to.have.property('category');",
+                  "    pm.expect(data).to.have.property('desc');",
+                  "});",
+                  "",
+                  "pm.test(\"Price is a positive number\", function () {",
+                  "    var data = pm.response.json();",
+                  "    pm.expect(data.price).to.be.a('number').and.above(0);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/products/1",
+              "host": ["{{BASE_URL}}"],
+              "path": ["products", "1"]
+            },
+            "description": "Positive test — retrieves a specific product by ID. Asserts 200, correct ID, required fields, and price validity."
+          }
+        },
+        {
+          "name": "GET Products — keyword search (name_like=Laptop)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"Search returns at least one result\", function () {",
+                  "    var data = pm.response.json();",
+                  "    pm.expect(data).to.be.an('array').with.lengthOf.above(0);",
+                  "});",
+                  "",
+                  "pm.test(\"Every result name contains 'Laptop' (case-insensitive)\", function () {",
+                  "    var data = pm.response.json();",
+                  "    data.forEach(function (product) {",
+                  "        pm.expect(product.name.toLowerCase()).to.include('laptop');",
+                  "    });",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/products?name_like=Laptop",
+              "host": ["{{BASE_URL}}"],
+              "path": ["products"],
+              "query": [
+                {
+                  "key": "name_like",
+                  "value": "Laptop"
+                }
+              ]
+            },
+            "description": "Positive test — keyword search via json-server name_like filter. Asserts 200 and that all results contain the keyword."
+          }
+        },
+        {
+          "name": "GET Product by ID — 404 negative (id=9999)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 404 for non-existing product\", function () {",
+                  "    pm.response.to.have.status(404);",
+                  "});",
+                  "",
+                  "pm.test(\"Response body is an empty object\", function () {",
+                  "    var data = pm.response.json();",
+                  "    pm.expect(data).to.be.an('object');",
+                  "    pm.expect(Object.keys(data).length).to.equal(0);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/products/9999",
+              "host": ["{{BASE_URL}}"],
+              "path": ["products", "9999"]
+            },
+            "description": "Negative test — requests a product with a non-existing ID. Asserts 404 and empty response body."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Cart",
+      "item": [
+        {
+          "name": "POST Add Item to Cart — positive (201 Created)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 201 Created\", function () {",
+                  "    pm.response.to.have.status(201);",
+                  "});",
+                  "",
+                  "pm.test(\"Created item has an auto-generated id\", function () {",
+                  "    var data = pm.response.json();",
+                  "    pm.expect(data).to.have.property('id');",
+                  "});",
+                  "",
+                  "pm.test(\"Created item productId matches request body\", function () {",
+                  "    var data = pm.response.json();",
+                  "    pm.expect(data.productId).to.equal(1);",
+                  "});",
+                  "",
+                  "pm.test(\"Created item quantity matches request body\", function () {",
+                  "    var data = pm.response.json();",
+                  "    pm.expect(data.quantity).to.equal(2);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"productId\": 1,\n  \"quantity\": 2\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/cart",
+              "host": ["{{BASE_URL}}"],
+              "path": ["cart"]
+            },
+            "description": "Positive test — adds an item to the cart. Asserts 201, auto-generated id, and that the response mirrors the request body fields."
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -217,18 +217,41 @@ Keywords: [`automation/robot/resources/common_keywords.robot`](../automation/rob
 
 ## 11. Postman API Tests
 
-> **To be completed after Lab 6 (2026-07-09).**
+Full report: [`reports/lab6-postman-report.md`](../reports/lab6-postman-report.md)  
+Collection: [`automation/postman/crousty-api-tests.postman_collection.json`](../automation/postman/crousty-api-tests.postman_collection.json)  
+Evidence: [`reports/lab6-postman-evidence.png`](../reports/lab6-postman-evidence.png)
 
-The Demo Web Shop exposes a REST API via json-server at `http://localhost:3001`. Key endpoints:
+### Tool: Postman (Collection v2.1)
 
-| Endpoint | Method | Description |
-|---|---|---|
-| `/products` | GET | List all products |
-| `/products?name_like=Laptop` | GET | Search products by keyword |
-| `/cart` | GET/POST | Read / add cart items |
-| `/users` | GET | List users |
+**Collection name:** TSD 2026 - Crousty - API Tests  
+**Base URL variable:** `{{BASE_URL}}` = `http://localhost:3001`
 
-Postman collection and environment variables to be documented in `automation/postman/`.
+| # | Request | Method | Scenario | Status | Assertions |
+|---|---|---|---|---|---|
+| 1 | `/products` | GET | Positive — list all products | 200 | 4 |
+| 2 | `/products/1` | GET | Positive — get by ID, schema check | 200 | 4 |
+| 3 | `/products?name_like=Laptop` | GET | Positive — keyword search | 200 | 3 |
+| 4 | `/products/9999` | GET | Negative — non-existing ID | 404 | 2 |
+| 5 | `/cart` | POST | Positive — create cart item | 201 | 4 |
+
+**Total: 5 requests · 17 assertions · 5 PASS · 0 FAIL**
+
+### Key assertions (pm.test)
+
+- **GET /products:** status 200, array non-empty, schema fields (`id`, `name`, `price`, `category`), response time < 500 ms
+- **GET /products/1:** status 200, `id === 1`, all schema fields present, `price > 0`
+- **GET ?name_like=Laptop:** status 200, results non-empty, every result name contains "laptop"
+- **GET /products/9999:** status 404, response body is `{}`
+- **POST /cart:** status 201, auto-generated `id` present, `productId` and `quantity` match request body
+
+### Collection variable
+
+The `BASE_URL` collection variable centralises the target environment. Switching from
+local development to a staging server requires only this one value to change.
+
+![Lab 6 — Postman Collection overview](../reports/lab6-postman-evidence-1.png)
+
+![Lab 6 — Postman Collection Runner results](../reports/lab6-postman-evidence-2.png)
 
 ---
 
@@ -239,12 +262,12 @@ Postman collection and environment variables to be documented in `automation/pos
 | Lab 3 (manual) | Manual | 10 | 8 | 2 (BUG-001) |
 | Lab 4 | Selenium WebDriver | 3 | 3 | 0 |
 | Lab 5 | Robot Framework | 2 | 2 | 0 |
-| Lab 6 | Postman | TBD | TBD | TBD |
+| Lab 6 | Postman | 5 | 5 | 0 |
 
 > **Note:** Lab 2 (JUnit — `Rating` class) is a standalone unit testing exercise unrelated to the Demo Web Shop and is therefore not included in this project results table. It is documented separately in section 8.
 
-**Overall automated coverage:** 5 test cases automated across 2 frameworks (TC-001 in both,
-TC-002 and TC-003 in Selenium only, TC-004 in Robot only). TC-005 through TC-010 remain manual.
+**Overall automated coverage:** 10 tests automated across 3 tools — 3 Selenium (TC-001, TC-002, TC-003),
+2 Robot Framework (TC-001, TC-004), and 5 Postman API requests. TC-005 through TC-010 remain manual.
 
 ---
 
@@ -297,7 +320,9 @@ This project provided hands-on experience with the full testing lifecycle: from 
 analysis and manual test case design, through unit testing and UI automation, to API testing.
 The Demo Web Shop proved an ideal sandbox — stable enough for reliable automation, complex
 enough to surface real challenges (async DOM, SPA routing, state management). The combination
-of Selenium (Java) and Robot Framework (Python) illustrated how different tools suit different
-audiences and contexts, while Postman complemented both by validating the underlying API layer
-independently of the UI. The one confirmed defect (BUG-001) demonstrates that even a small,
-controlled application can hide subtle UX bugs that only boundary testing uncovers.
+of Selenium (Java), Robot Framework (Python), and Postman illustrated how different tools suit
+different layers: Selenium gives fine-grained control over browser interactions, Robot Framework
+offers readable keyword-driven syntax for cross-team collaboration, and Postman validates the
+REST contract independently of the UI. The one confirmed defect (BUG-001) demonstrates that
+even a small, controlled application can hide subtle UX bugs that only boundary testing uncovers.
+10 automated tests pass with 0 failures across all three automation layers.
