@@ -19,12 +19,14 @@ skills in each discipline and produce reproducible, documented evidence of softw
 
 ## 2. Team and Roles
 
-| Member | Role | Responsibilities |
+| Team Member | Role | Responsibilities |
 |---|---|---|
-| Flavien | Lead tester / developer | Test design, automation, documentation, defect reporting |
+| Flavien Louvet | Automation Tester | Selenium and Robot tests |
+| Meziere Leny | API Tester | Manual test cases and techniques |
+| Brindjonc Luikian | Repository Lead | Git structure, branches, merge |
 
-The project was completed as a solo submission. All activities — from selecting the application
-to writing automated tests and producing this report — were performed by a single team member.
+The project was completed by a three-person team. Responsibilities were split across automation,
+manual testing, and repository management to cover the full testing workflow.
 
 ---
 
