@@ -236,16 +236,20 @@ In summary, the closing slides highlight the main lessons from the course. First
 
 # 9. Lessons Learned
 
-1. **Explicit waits are mandatory for SPAs** — async fetch calls break any fixed sleep
-2. **Test isolation requires intent** — `localStorage.clear()` prevented TC-001 ↔ TC-003 state leak
-3. **Robot Framework is more readable** — keyword syntax bridges dev/non-dev gap; Selenium gives more control for complex scenarios
-4. **Maven Wrapper (`mvnw.cmd`) enables portability** — zero-config Maven for any new machine
-5. **Cross-OS node_modules are incompatible** — WSL vs Windows binary mismatch; always install in the target OS
-6. **Silent bugs are worse than crashes** — BUG-001 looked like success; only boundary testing revealed it
+1. **Synchronization matters for SPAs.** Use explicit waits instead of fixed delays.
+
+2. **Isolation is part of test design.** Clear shared state before each run.
+
+3. **Choose the right tool for the level.** Selenium, Robot Framework, and Postman each have a role.
+
+4. **Boundary tests find defects.** BUG-001 came from the quantity-0 case.
+
+5. **Portability improves reproducibility.** Maven Wrapper simplifies setup across machines.
+
+6. **A green test is not always a correct product.** BUG-001 showed that clearly.
 
 <!--
-Several important lessons emerged from this project. First: explicit waits are non-negotiable in single-page applications — any asynchronous fetch call breaks fixed sleep() calls and produces flaky tests. Second: test isolation must be enforced from the start — without localStorage.clear(), the persistent session from TC-003 contaminated TC-001 on successive runs. Third: Robot Framework does not replace Selenium but complements it — each tool has its natural audience. Fourth: the Maven Wrapper eliminates setup issues across team environments by downloading Maven automatically. Final point: BUG-001 reminds us that silent failures are more dangerous than visible crashes, and that only boundary tests can detect them.
-Several important course lessons emerged from this project. First: explicit waits are non-negotiable in single-page applications — asynchronous fetch calls make fixed sleep-based tests unreliable. Second: test isolation is part of test design — without localStorage.clear(), shared browser state can contaminate later cases. Third: tool selection depends on the testing level — Selenium is best for browser control, Robot Framework for readable acceptance tests, and Postman for API validation. Fourth: boundary testing is essential because defects often appear at the limits rather than in the nominal path. Final point: a green UI result does not always mean the behaviour is correct, and BUG-001 is a good example of why expected business rules must be checked explicitly.
+Several important lessons emerged from this project. First: synchronization is a core concept for modern web apps, because asynchronous interfaces require explicit waiting strategies rather than fixed delays. In this project, WebDriverWait and Wait Until Element Is Visible were the practical application of that principle. Second: isolation is part of test design, not an afterthought, since a reliable test suite must control shared state before each run. Here, localStorage.clear() prevented browser state from leaking between cases and helped preserve repeatability. Third: tool choice should match the testing level, because no single tool covers everything well: Selenium is suited to browser-level interaction, Robot Framework to readable acceptance-style tests, and Postman to API contract validation. Fourth: boundary value analysis is often where defects appear, which is why the quantity-0 case was included in the test design. Fifth: portability matters when sharing test environments, and the Maven Wrapper reduces setup friction while making the Java automation reproducible across machines. Final point: a test can pass while the product is still wrong, so BUG-001 shows why expected business rules must be checked explicitly.
 -->
 
 ---
