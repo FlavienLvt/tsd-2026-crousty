@@ -108,7 +108,15 @@ Our test strategy follows a layered approach. At the base, ten manual test cases
 | TC-009 | Full checkout – Guest | Flow | ✅ PASS |
 | TC-010 | Full checkout – Registered | Flow | ✅ PASS |
 
-**8/10 PASS · 2 defective (BUG-001)**
+**9/10 PASS · 1 defective (BUG-001)**
+
+<!--
+The manual test suite covers positive, negative, boundary, and full-flow
+scenarios. Nine tests pass, and the only failing case is TC-008, which checks
+that the cart rejects zero or negative quantity values. This result is important
+because it shows that the application still lacks a validation rule for a very
+small but meaningful boundary condition.
+-->
 
 <!--
 Our ten test cases cover four dimensions of functional quality. Positive scenarios confirm that nominal features work correctly under normal conditions. Negative scenarios verify behavior with incorrect inputs or impossible flows. Boundary tests probe the application's validation limits. TC-009 and TC-010 cover the complete checkout journey in both guest and registered user mode. Result: 8 out of 10 tests pass. The two failures point to a single defect in quantity handling — BUG-001 — which we will detail on the next slide.
@@ -197,13 +205,21 @@ Robot Framework offers a complementary approach to Selenium through keyword-driv
 For API testing, Postman validates the HTTP layer directly, without going through the browser. Our collection contains 5 requests in two folders. On the Products side: list all products, retrieve a product by ID with schema validation, search by keyword using json-server's name_like filter, and verify that a non-existing ID returns 404. On the Cart side: create an item via POST and verify the response contains the auto-generated id, the productId, and the expected quantity with status 201. In total, 17 assertions cover HTTP status codes, JSON structure, and data validity. All 5 tests pass.
 -->
 
+<!--
+For the API part, we prepared Postman tests for the json-server endpoints that
+are available in the application: products, keyword search, cart, and users.
+These requests will let us validate response codes, response structure, and data
+integrity independently of the UI. The deck shows the planned coverage now, and
+the final API results will be added when Lab 6 is completed.
+-->
+
 ---
 
 # 8. Results Summary
 
 | Lab | Tool | Tests | ✅ Pass | ❌ Fail |
 |---|---|---|---|---|
-| Lab 3 | Manual (Demo Web Shop) | 10 | 8 | 2 |
+| Lab 3 | Manual (Demo Web Shop) | 10 | 9 | 1 |
 | Lab 4 | Selenium WebDriver | 3 | 3 | 0 |
 | Lab 5 | Robot Framework | 2 | 2 | 0 |
 | Lab 6 | Postman | 5 | 5 | 0 |
