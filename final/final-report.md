@@ -144,20 +144,23 @@ Full report: [`reports/lab2-unit-testing.md`](../reports/lab2-unit-testing.md)
 
 ### Exercise: `Rating` class
 
-A `Rating` utility class was implemented and tested using JUnit 5 to exercise unit testing
-concepts: equivalence partitioning, boundary value analysis, and the JUnit lifecycle.
+A `Rating` utility class converts a numeric score (0–100) to a letter grade (A–F) and throws
+`IllegalArgumentException` for values outside the valid range. Tested with JUnit 5 using
+equivalence partitioning and boundary value analysis.
 
 | Test | Input | Expected | Result |
 |---|---|---|---|
-| `testValidRating_1` | rating = 1 | accepted | PASS |
-| `testValidRating_3` | rating = 3 | accepted | PASS |
-| `testValidRating_5` | rating = 5 | accepted | PASS |
-| `testBoundary_0` | rating = 0 | `IllegalArgumentException` | PASS |
-| `testBoundary_6` | rating = 6 | `IllegalArgumentException` | PASS |
-| `testNegative` | rating = -1 | `IllegalArgumentException` | PASS |
+| `shouldReturnAFor93Points` | 93 | `'A'` | PASS |
+| `shouldReturnBFor85Points` | 85 | `'B'` | PASS |
+| `shouldReturnEFor61Points` | 61 | `'E'` | PASS |
+| `shouldReturnFFor60Points` | 60 | `'F'` | PASS |
+| `shouldReturnFFor0Points` | 0 | `'F'` | PASS |
+| `shouldThrowExceptionForNegativePoints` | -1 | `IllegalArgumentException` | PASS |
+| `shouldThrowExceptionForMoreThan100Points` | 101 | `IllegalArgumentException` | PASS |
+| `intentionalFailingTestDemo` | 75 → expected `'A'` | — | @Disabled |
 
-All 6 unit tests passed. The exercise demonstrated `@Test`, `@BeforeEach`, `@AfterEach`,
-`assertThrows`, and `assertEquals` from JUnit Jupiter.
+7 tests run, 7 passed, 1 disabled (educational demonstration of a controlled failing assertion).
+The exercise demonstrated `@Test`, `@Disabled`, `assertThrows`, and `assertEquals` from JUnit Jupiter.
 
 ---
 
@@ -221,7 +224,7 @@ Keywords: [`automation/robot/resources/common_keywords.robot`](../automation/rob
 
 Full report: [`reports/lab6-postman-report.md`](../reports/lab6-postman-report.md)  
 Collection: [`automation/postman/crousty-api-tests.postman_collection.json`](../automation/postman/crousty-api-tests.postman_collection.json)  
-Evidence: [`reports/lab6-postman-evidence.png`](../reports/lab6-postman-evidence.png)
+Evidence: [`reports/lab6-postman-evidence-1.png`](../reports/lab6-postman-evidence-1.png) · [`reports/lab6-postman-evidence-2.png`](../reports/lab6-postman-evidence-2.png)
 
 ### Tool: Postman (Collection v2.1)
 
@@ -244,7 +247,7 @@ Evidence: [`reports/lab6-postman-evidence.png`](../reports/lab6-postman-evidence
 - **GET /products/1:** status 200, `id === 1`, all schema fields present, `price > 0`
 - **GET ?name_like=Laptop:** status 200, results non-empty, every result name contains "laptop"
 - **GET /products/9999:** status 404, response body is `{}`
-- **POST /cart:** status 201, auto-generated `id` present, `productId` and `quantity` match request body
+- **POST /cart:** status 201, auto-generated `id` present, `productId` and `qty` match request body
 
 ### Collection variable
 
@@ -285,7 +288,8 @@ local development to a staging server requires only this one value to change.
   Maven and Robot Framework would make results reproducible on every commit.
 - **Robot Framework evidence:** HTML report must be generated locally and screenshotted —
   the generated files are not committed (too large, gitignored).
-- **Postman coverage incomplete** until Lab 6 is submitted.
+- **API test scope:** The Postman collection covers the five core endpoints; edge cases such as
+  malformed JSON bodies, authentication flows, or rate limiting are not exercised.
 
 ---
 

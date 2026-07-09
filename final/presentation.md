@@ -147,8 +147,8 @@ BUG-001 is the main defect identified during boundary testing. The scenario is s
 | Test | TC | Result |
 |---|---|---|
 | `TC001_shouldLoginWithValidCredentials` | TC-001 | ✅ PASS |
-| `TC002_shouldDisplayResultsForLaptop` | TC-002 | ✅ PASS |
-| `TC003_shouldAddProductToCart` | TC-003 | ✅ PASS |
+| `TC002_shouldDisplayResultsWhenSearchingForLaptop` | TC-002 | ✅ PASS |
+| `TC003_shouldAddProductToCartAndShowNotification` | TC-003 | ✅ PASS |
 
 ![w:780](../reports/lab4-selenium-evidence.png)
 
@@ -187,7 +187,7 @@ Robot Framework offers a complementary approach to Selenium through keyword-driv
 | 2 | `GET /products/1` | Positive | 200, id=1, price > 0 | ✅ PASS |
 | 3 | `GET /products?name_like=Laptop` | Positive | 200, results contain keyword | ✅ PASS |
 | 4 | `GET /products/9999` | Negative | 404 | ✅ PASS |
-| 5 | `POST /cart` | Positive | 201, productId + quantity | ✅ PASS |
+| 5 | `POST /cart` | Positive | 201, productId + qty | ✅ PASS |
 
 **5 requests · 17 assertions · 5 PASS · 0 FAIL**
 

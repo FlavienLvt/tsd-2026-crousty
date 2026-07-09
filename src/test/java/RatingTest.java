@@ -1,3 +1,4 @@
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -54,8 +55,9 @@ class RatingTest {
 
 
     @Test
+    @Disabled("Demonstrates a failing assertion — included for educational purposes only")
     void intentionalFailingTestDemo() {
         Rating rating = new Rating();
-        assertEquals('A', rating.determineResultGrade(75), "Démonstration d'un échec contrôlé");
+        assertEquals('A', rating.determineResultGrade(75));
     }
 }

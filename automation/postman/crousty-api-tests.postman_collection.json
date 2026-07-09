@@ -205,9 +205,9 @@
                   "    pm.expect(data.productId).to.equal(1);",
                   "});",
                   "",
-                  "pm.test(\"Created item quantity matches request body\", function () {",
+                  "pm.test(\"Created item qty matches request body\", function () {",
                   "    var data = pm.response.json();",
-                  "    pm.expect(data.quantity).to.equal(2);",
+                  "    pm.expect(data.qty).to.equal(2);",
                   "});"
                 ],
                 "type": "text/javascript"
@@ -224,7 +224,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"productId\": 1,\n  \"quantity\": 2\n}",
+              "raw": "{\n  \"productId\": 1,\n  \"qty\": 2\n}",
               "options": {
                 "raw": {
                   "language": "json"

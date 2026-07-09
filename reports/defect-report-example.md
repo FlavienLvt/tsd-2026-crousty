@@ -31,3 +31,13 @@ The system displays a green success message: "The product has been added to your
 
 ## 6. Attachments
 * *[Placeholder for Screenshot: screenshot-bug-quantity.png showing the success message with a 0 quantity]*
+
+## 7. Status and Resolution
+
+| Field | Value |
+| :--- | :--- |
+| **Status** | ✅ Fixed |
+| **Fixed in** | `demo-shop/server.js` — POST `/cart` route |
+| **Fix description** | Server-side validation added: if `req.body.qty` is missing, NaN, or ≤ 0, the API responds with HTTP 400 and the message "Quantity must be greater than 0". |
+| **Fix date** | 2026-07-09 |
+| **Verified by** | TC-008 manual retest — server now returns 400 for `qty = 0` |

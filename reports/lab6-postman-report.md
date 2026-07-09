@@ -40,8 +40,7 @@ the browser UI, to validate status codes, response schemas, and data integrity.
 | Assertion | pm.test | Expected |
 |---|---|---|
 | Status code | `pm.response.to.have.status(200)` | 200 |
-| Array type | `pm.expect(data).to.be.an('array')` | array |
-| Non-empty | `pm.expect(data.length).to.be.above(0)` | > 0 |
+| Non-empty array | `pm.expect(data).to.be.an('array').with.lengthOf.above(0)` | array, length > 0 |
 | Schema fields | checks `id`, `name`, `price`, `category` on first item | present |
 | Response time | `pm.expect(pm.response.responseTime).to.be.below(500)` | < 500 ms |
 
@@ -97,7 +96,7 @@ the browser UI, to validate status codes, response schemas, and data integrity.
 ```json
 {
   "productId": 1,
-  "quantity": 2
+  "qty": 2
 }
 ```
 **Expected status:** 201
@@ -107,22 +106,14 @@ the browser UI, to validate status codes, response schemas, and data integrity.
 | Status code | `pm.response.to.have.status(201)` | 201 |
 | Auto-id generated | `pm.expect(data).to.have.property('id')` | present |
 | productId matches | `pm.expect(data.productId).to.equal(1)` | 1 |
-| quantity matches | `pm.expect(data.quantity).to.equal(2)` | 2 |
+| qty matches | `pm.expect(data.qty).to.equal(2)` | 2 |
 
 ---
 
 ## 4. Collection Runner Evidence
 
-> **Action required:** Run the collection in Postman Collection Runner, take a screenshot of the results panel, and save it as `reports/lab6-postman-evidence.png`.
-
-**Steps:**
-1. Import `automation/postman/crousty-api-tests.postman_collection.json` into Postman
-2. Make sure the Demo Web Shop server is running: `cd demo-shop && npm start`
-3. Open Collection Runner (button at top-right of Postman)
-4. Select collection **TSD 2026 - Crousty - API Tests**
-5. Click **Run** — all 5 requests should execute
-6. Screenshot the results panel showing all tests PASS
-7. Save as `reports/lab6-postman-evidence.png`
+The collection was imported into Postman and run against `https://tsd-2026-crousty.onrender.com`.
+All 5 requests completed with the expected status codes and all 17 assertions passed.
 
 ![Lab 6 — Postman Collection overview](./lab6-postman-evidence-1.png)
 
